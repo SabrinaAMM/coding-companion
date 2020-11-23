@@ -15,6 +15,8 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :nickname, required: true %>
+    <%= f.input :bio, required: true %>
   </div>
 
   <div class="form-actions">
