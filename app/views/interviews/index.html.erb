@@ -1,10 +1,12 @@
 <div class="container">
-  <div class="row justify-content-between m-5">
-    <% @interviews.each do |interview| %>
-      <div class="card" style="width: 18rem; height: 20rem">
-        <%= link_to current_user.nickname, interview_path(interview), class: "streched-link" %>
-      </div>
-    <% end %>
+  <div class="row">
+
+      <% @interviews.each do |interview| %>
+        <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem; height: 20rem">
+          <h2><%= link_to interview.user.nickname, interview_path(interview), class: "stretched-link" %></h2>
+        </div>
+      <% end %>
+
   </div>
 </div>
 

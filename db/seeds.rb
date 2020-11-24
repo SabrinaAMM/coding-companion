@@ -8,11 +8,10 @@
 require 'json'
 require 'open-uri'
 puts "clearing data"
-#User.destroy_all
-Interview.destroy_all
 Booking.destroy_all
+Interview.destroy_all
+User.destroy_all
 puts "generating Users"
-
 john = User.create!(email: "john@example.com", password: "123456", nickname: "Johnny_the_John", bio: "I got lots of experience with jobs and I worked a lot. But now I want a new job because new jobs are good.")
 mary = User.create!(email: "mary@example.com", password: "123456", nickname: "Cool_Mary", bio: "Hi, I am Mary and I love coding. I want to do coding as a job. For my next interview I look for cool training partners.")
 zoe = User.create!(email: "zoe@example.com", password: "123456", nickname: "zoe-bowie", bio: "I work in the IT industry for 20 years now. I love share my experience with you and to help you with your upcoming interviews!!")
