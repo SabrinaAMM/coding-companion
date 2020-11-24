@@ -1,0 +1,83 @@
+<div class="container" >
+  <h1>Dashboard</h1>
+  <br>
+ <div>
+    <h3>Profile Information</h3>
+    <hr>
+    <ul class="pl-0">
+       <div class="card ml-0">
+            <li>
+              <div class="grid-item">
+                <strong>Email</strong>  <%= @user.email%> 
+                <strong>Nickname:</strong>  <%= @user.nickname %> 
+             </div>
+             </li>
+          </div>
+    </ul>
+ </div>
+
+<h3> My Interview proposals - wrong</h3>
+<% @all_bookings.each do |booking| %>
+<div class="card ml-0">
+            <li>
+              <div class="grid-item">
+                <strong>Interview:</strong>  <%= booking.interview_id%> |
+                <strong>Creator</strong>  <%= booking.interview.user.nickname%> |
+                <strong>Participant</strong>  <%= booking.user.nickname%> |
+                <strong>Focus</strong>  <%= booking.interview.focus%> |
+              </div>
+            </li>
+          </div>
+       <% end %>
+    </ul>
+
+
+  <div>
+    <h3> My booked Interviews</h3>
+    <hr>
+    <ul class="pl-0">
+      <% @user.interviews.each do |interview| %>
+        <% if interview.time >= DateTime.now %>
+          <div class="card ml-0">
+            <li>
+              <div class="grid-item">
+                <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+                <strong>Date: </strong>  <%= interview.time %> |
+                <strong>Focus:</strong>  <%= interview.focus %> |
+                <strong>Experience:</strong>  <%= interview.experience %> |
+                <strong>Interview Language</strong>  <%= interview.interview_language %>
+              </div>
+              <div class="item"></div>
+              <div class="grid-item">
+                <button type="button" class="btn btn-danger"> <%= link_to "✘ Cancel", interview_path(interview), method: :delete, data: { confirm: "Are you sure?"} %></button>
+              </div>
+            </li>
+          </div>
+       <% end %>
+       <% end %>
+    </ul>
+  </div>
+
+<div>
+    <h3>My past Interviews</h3>
+    <hr>
+<ul class="pl-0">
+    <% @user.interviews.each do |interview| %>
+     <% if interview.time < DateTime.now %>
+        <div class="card ml-0">
+          <li>
+            <div class="grid-item">
+              <strong>Name:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+              <strong>Date:</strong>  <%= interview.time %> |
+              <strong>Focus:</strong>  <%= interview.focus %> |
+              <strong>Experience:</strong>  <%= interview.experience %> |
+              <strong>Interview Language:</strong>  <%= interview.interview_language %>
+            </div>
+            <div class="item"></div>
+          </li>
+        </div>
+      <% end %>
+     <% end %>
+    </ul>
+  </div>
+</div>
