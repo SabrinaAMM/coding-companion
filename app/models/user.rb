@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :bookings
-  has_many :interviews, through: :bookings
+  has_many :bookings, dependent: :destroy
+  has_many :interviews, through: :bookings, dependent: :destroy
   validates :nickname, uniqueness: true
 
   # Include default devise modules. Others available are:
