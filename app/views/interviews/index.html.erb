@@ -3,7 +3,44 @@
 
       <% @interviews.each do |interview| %>
         <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem; height: 20rem">
+          <div class="d-flex">
+            <div>
+              <!-- Icon Clock -->
+            </div>
+            <div>
+              <%= interview.time.strftime("%a %e.%m.%y | %l:%M") %>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <!-- Icon Code -->
+            </div>
+            <div>
+              <!-- Tags -->
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <!-- Icon Text -->
+            </div>
+            <div>
+              <%= interview.interview_language %>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <!-- Avatar -->
+            </div>
+            <div>
+              <%= interview.user.bio %>
+            </div>
+          </div>
+
           <h2><%= link_to interview.user.nickname, interview_path(interview), class: "stretched-link" %></h2>
+
         </div>
       <% end %>
 
