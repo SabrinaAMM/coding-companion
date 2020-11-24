@@ -1,0 +1,22 @@
+
+<br>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <div class="interview-form p-4 mt-4 mb-4">
+        <h2>Create a new Interview</h2>
+
+        <%= simple_form_for [@interview] do |f| %>
+          <%= f.input :time %>
+          <%= f.input :focus %>
+          <%= f.input :experience%>
+          <%= f.input :interview_language %>
+          <br>
+          <%= f.button :submit, "+ Create Interview", class: "btn btn-success" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+

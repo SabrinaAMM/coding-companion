@@ -1,0 +1,12 @@
+
+<div>
+  <% @interviews.each do |interview| %>
+    <div class="card" style="width: 18rem;">
+      <%= link_to interview.focus, interview_path(interview), class: "streched-link" %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
