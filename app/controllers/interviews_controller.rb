@@ -1,20 +1,24 @@
 class InterviewsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    # insert Search
+    # add Search!
     @interviews = Interview.all
   end
 
   def show
     find_interview
+    authorize @interview
+    @user = current_user
   end
 
   def new
     @interview = Interview.new
+    authorize @interview
   end
 
   def create
     @interview = Interview.new(interview_params)
+    authorize @interview
     @interview.user = current_user
     if @interview.save
       redirect_to interview_path(@interview)
@@ -25,6 +29,7 @@ class InterviewsController < ApplicationController
 
   def destroy
     find_interview
+    authorize @interview
     @interview.destroy
     redirect_to dashboard_index_path
   end
