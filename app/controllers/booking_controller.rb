@@ -1,10 +1,10 @@
 class BookingsController < ApplicationController
     def create
       find_interview
-      @booking = Booking.new(booking_params)
+      @booking = Booking.new
       @booking.user = current_user
       @booking.interview= @interview
-      authorize @booking
+      #authorize @booking
       if @booking.save
         flash.notice = "Booking created!"
         redirect_to dashboard_index_path
@@ -15,17 +15,13 @@ class BookingsController < ApplicationController
   
     def destroy
       find_booking
-      authorize @booking
+    #authorize @booking
       @booking.destroy
       flash.notice = "Booking deleted!"
       redirect_to dashboard_index_path
     end
   
     private
-  
-    def booking_params
-      params.require(:booking).permit(:interview_id, :user_id)
-    end
   
     def find_interview
       @interview = Interview.find(params[:interview_id])
