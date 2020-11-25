@@ -5,10 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
-
-
-=======
 require 'json'
 require 'open-uri'
 puts "clearing data"
@@ -43,4 +39,3 @@ booking4 = Booking.create!(user: zoe, interview: interview4)
 booking5 = Booking.create!(user: zoe, interview: interview5)
 booking6 = Booking.create!(user: zoe, interview: interview6)
 puts "done"
->>>>>>> master
