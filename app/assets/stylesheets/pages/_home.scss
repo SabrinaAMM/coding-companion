@@ -2,8 +2,11 @@
 .home-banner {
   background-size: cover;
   background-position: center;
+  height: 100vh;
   padding: 150px 0;
 }
+
+.home-banner img
 
 .home-banner h2 {
   margin: 0;
@@ -13,13 +16,30 @@
   font-weight: bold;
 }
 
-.home-banner p {
+.logo_text {
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.home-banner background-image {
-  // background: linear-gradient(to right, black, white);
+.logo {
+  height: 40px;
+  overflow: hidden;
 }
+
+.logo img {
+  height: 40px;
+  width: auto;
+  transition: transform 300ms;
+}
+
+
+.logo .logo_text {
+  transition: transform 300ms;
+}
+
+.logo:hover img, .logo:hover .logo_text {
+  transform: translateY(-40px);
+}
+
