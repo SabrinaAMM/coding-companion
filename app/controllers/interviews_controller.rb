@@ -22,7 +22,7 @@ class InterviewsController < ApplicationController
     #authorize @interview
     @interview.user = current_user
     if @interview.save
-      redirect_to interview_path(@interview)
+      redirect_to dashboard_index_path
     else
       render :new
     end
