@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CodingCompanion</title>
+    <title>Coding Companion</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +12,10 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <% unless controller_name == "pages" %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <%= render 'shared/flashes' %>
 
     <%= yield %>
