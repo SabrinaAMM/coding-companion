@@ -12,30 +12,31 @@
             <% if interview.bookings.present? %>
              <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
             <% else  %>
-              <strong>Participant:</strong> None 
+              <strong>Participant:</strong> None
             <% end %>
             <strong>Date: </strong>  <%= interview.time %> |
             <strong>Focus:</strong>  <%= interview.focus %> |
             <strong>Experience:</strong>  <%= interview.experience %> |
             <strong>Interview Language</strong>  <%= interview.interview_language %>
           </li>
-        <% end %>
+      <% end %>
     </ul>
   </div>
 
   <div>
     <h3> My pending Interviews</h3>
+    <hr>
     <ul>
       <% @pending_interviews.each do |interview| %>
-          <li>
-            <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
-            <strong>Participant:</strong> None 
-            <strong>Date: </strong>  <%= interview.time %> |
-            <strong>Focus:</strong>  <%= interview.focus %> |
-            <strong>Experience:</strong>  <%= interview.experience %> |
-            <strong>Interview Language</strong>  <%= interview.interview_language %>
-          </li>
-        <% end %>
+        <li>
+          <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+          <strong>Participant:</strong> None
+          <strong>Date: </strong>  <%= interview.time %> |
+          <strong>Focus:</strong>  <%= interview.focus %> |
+          <strong>Experience:</strong>  <%= interview.experience %> |
+          <strong>Interview Language</strong>  <%= interview.interview_language %>
+        </li>
+      <% end %>
     </ul>
   </div>
 
@@ -49,7 +50,7 @@
           <% if interview.bookings.present? %>
             <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
           <% else  %>
-            <strong>Participant:</strong> None 
+            <strong>Participant:</strong> None
           <% end %>
           <strong>Date:</strong>  <%= interview.time %> |
           <strong>Focus:</strong>  <%= interview.focus %> |

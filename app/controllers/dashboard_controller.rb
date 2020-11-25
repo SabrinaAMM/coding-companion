@@ -1,12 +1,12 @@
 class DashboardController < ApplicationController
   def index
     #@user = policy_scope(User)
-    @user  =  current_user
+    @user = current_user
     @created_interviews = @user.interviews
 
     @booked_interviews = []
     @user.bookings.each do |booking|
-      @booked_interviews << booking.interview 
+      @booked_interviews << booking.interview
     end
 
     @upcoming_interviews = []
@@ -16,9 +16,10 @@ class DashboardController < ApplicationController
         @upcoming_interviews << interview
       end
     end
+
     @created_interviews.each do |interview|
       if interview.bookings.present? && interview.time >= DateTime.now
-        @upcoming_interviews << interview 
+        @upcoming_interviews << interview
       elsif interview.time >= DateTime.now
         @pending_interviews << interview
       end
@@ -26,15 +27,15 @@ class DashboardController < ApplicationController
 
     @past_interviews = []
     @created_interviews.each do |interview|
-      if interview.time < DateTime.now 
+      if interview.time < DateTime.now
         @past_interviews << interview
-      end 
+      end
     end
+
     @booked_interviews.each do |interview|
-      if interview.time < DateTime.now 
+      if interview.time < DateTime.now
         @past_interviews << interview
-      end 
+      end
     end
   end
-
 end

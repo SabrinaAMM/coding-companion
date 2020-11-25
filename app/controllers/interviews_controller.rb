@@ -8,18 +8,18 @@ class InterviewsController < ApplicationController
 
   def show
     find_interview
-    #authorize @interview
+    # authorize @interview
     @user = current_user
   end
 
   def new
     @interview = Interview.new
-    #authorize @interview
+    # authorize @interview
   end
 
   def create
     @interview = Interview.new(interview_params)
-    #authorize @interview
+    # authorize @interview
     @interview.user = current_user
     if @interview.save
       redirect_to dashboard_index_path
@@ -30,7 +30,7 @@ class InterviewsController < ApplicationController
 
   def destroy
     find_interview
-    #authorize @interview
+    # authorize @interview
     @interview.destroy
     redirect_to dashboard_index_path
   end
