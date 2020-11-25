@@ -1,0 +1,63 @@
+<div class="container" >
+  <h1>Dashboard</h1>
+  <br>
+
+  <div>
+    <h3> My upcoming Interviews</h3>
+    <hr>
+    <ul>
+      <% @upcoming_interviews.each do |interview| %>
+          <li>
+            <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+            <% if interview.bookings.present? %>
+             <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
+            <% else  %>
+              <strong>Participant:</strong> None 
+            <% end %>
+            <strong>Date: </strong>  <%= interview.time %> |
+            <strong>Focus:</strong>  <%= interview.focus %> |
+            <strong>Experience:</strong>  <%= interview.experience %> |
+            <strong>Interview Language</strong>  <%= interview.interview_language %>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <h3> My pending Interviews</h3>
+    <ul>
+      <% @pending_interviews.each do |interview| %>
+          <li>
+            <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+            <strong>Participant:</strong> None 
+            <strong>Date: </strong>  <%= interview.time %> |
+            <strong>Focus:</strong>  <%= interview.focus %> |
+            <strong>Experience:</strong>  <%= interview.experience %> |
+            <strong>Interview Language</strong>  <%= interview.interview_language %>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <h3>My past Interviews</h3>
+    <hr>
+    <ul>
+      <% @past_interviews.each do |interview| %>
+        <li>
+          <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+          <% if interview.bookings.present? %>
+            <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
+          <% else  %>
+            <strong>Participant:</strong> None 
+          <% end %>
+          <strong>Date:</strong>  <%= interview.time %> |
+          <strong>Focus:</strong>  <%= interview.focus %> |
+          <strong>Experience:</strong>  <%= interview.experience %> |
+          <strong>Interview Language:</strong>  <%= interview.interview_language %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
