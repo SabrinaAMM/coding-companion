@@ -1,4 +1,4 @@
-# class InterviewPolicy < ApplicationPolicy
+class InterviewPolicy < ApplicationPolicy
 #   def show?
 #     true
 #   end
@@ -16,4 +16,4 @@
 #       scope.all
 #     end
 #   end
-# end
+end

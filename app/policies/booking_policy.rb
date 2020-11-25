@@ -1,4 +1,4 @@
-# class BookingPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
 #   def create?
 #     true
 #   end
@@ -18,4 +18,4 @@
 #   def reject?
 #     record.interview.user == user
 #   end
-# end
+end
