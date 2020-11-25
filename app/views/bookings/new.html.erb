@@ -1,47 +1,41 @@
 <div class="container">
-  <div class="card d-flex align-items-center" style="width: 18rem; height: 20rem">
-    <div>
-      <div>
-        <i class="far fa-clock"></i>
-      </div>
-      <div>
-        <%= @interview.time.strftime("%a %e.%m.%y | %l:%M") %>
-      </div>
-    </div>
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="d-flex flex-column align-items-center">
+        <h2 class="font-weight-bold text-center mt-5 mb-5">CONFIRM YOUR INTERVIEW WITH <br> <%= @interview.user.nickname %></h2>
+        <div class="bg-white rounded shadow-sm p-3" style="height: 400px; width: 350px;" >
+          <ul>
 
-    <div>
-      <div>
-        <i class="fas fa-terminal"></i>
-      </div>
-      <div>
-        <%= @interview.focus %>
-      </div>
-    </div>
+            <li>
+              <i class="far fa-clock"></i> |
+              <%= @interview.time.strftime("%d %b %Y, %H:%M") %>
+            </li>
 
-    <div>
-      <div>
-        <i class="far fa-comments"></i>
-      </div>
-      <div>
-        <%= @interview.interview_language %>
-      </div>
-    </div>
+            <li>
+              <i class="fas fa-terminal"></i> |
+              <%= @interview.focus %>
+            </li>
 
-    <div>
-      <div>
-        <!-- Avatar -->
-      </div>
-      <div>
-        <%= @interview.user.nickname %>
-        <%= @interview.user.bio %>
-      </div>
-    </div>
-    <div>
-      <div>
-        <%= link_to "Go Back", :back, class: "btn btn-primary" %>
-      </div>
-      <div>
-        <%= link_to "→ Confirm booking", dashboard_index_path, class: "btn btn-primary" %>
+            <li>
+              <i class="far fa-comments"></i> |
+              <%= @interview.interview_language %>
+            </li>
+
+            <li>
+              <%= @interview.user.nickname %>:
+              <%= @interview.user.bio %>
+            </li>
+
+            <li>
+              <%= link_to "← Go Back", :back, class: "btn btn-secondary" %>
+            </li>
+
+            <li>
+              <%= link_to "→ Confirm booking", interview_bookings_path(@interview), method: :post, class: "btn btn-primary" %>
+            </li>
+
+          </ul>
+        </div>
       </div>
     </div>
   </div>
