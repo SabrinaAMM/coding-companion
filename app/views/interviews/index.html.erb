@@ -10,10 +10,10 @@
   <br>
 
   <h2>Today</h2>
-    <div class="row">
+    <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
         <% if interview.time.today? %>
-          <div class="col-3">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <%= render partial: 'shared/card-index', locals: { interview: interview } %>
           </div>
         <% end %>
@@ -21,7 +21,7 @@
     </div>
   <br>
   <h2>Tomorrow</h2>
-    <div class="row">
+    <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
         <% if interview.time == Date.tomorrow %>
           <div class="col-3">
@@ -32,10 +32,10 @@
     </div>
   <br>
   <h2>In the Future</h2>
-    <div class="row">
+    <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
         <% if interview.time >= Date.tomorrow %>
-          <div class="col-3">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <%= render partial: 'shared/card-index', locals: { interview: interview } %>
           </div>
         <% end %>
