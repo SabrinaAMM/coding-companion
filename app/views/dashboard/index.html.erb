@@ -1,64 +1,89 @@
-<div class="container" >
+<div class="container mt-4" >
   <h1>Dashboard</h1>
   <br>
 
   <div>
-    <h3> My upcoming Interviews</h3>
-    <hr>
-    <ul>
-      <% @upcoming_interviews.each do |interview| %>
-          <li>
-            <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
-            <% if interview.bookings.present? %>
-             <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
-            <% else  %>
-              <strong>Participant:</strong> None
-            <% end %>
-            <strong>Date: </strong>  <%= interview.time %> |
-            <strong>Focus:</strong>  <%= interview.focus %> |
-            <strong>Experience:</strong>  <%= interview.experience %> |
-            <strong>Interview Language</strong>  <%= interview.interview_language %>
+    <ul class="list-group list-group-flush">
+      <div class="card my-3">
+        <div class="card-header text-light bg-secondary">
+          <h3> My upcoming Interviews</h3>
+        </div>
+        <% @upcoming_interviews.each do |interview| %>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-10">
+                <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+                <% if interview.bookings.present? %>
+                  <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
+                <% else  %>
+                  <strong>Participant:</strong> None
+                <% end %>
+                <strong>Date: </strong>  <%= interview.time %> |
+                <strong>Focus:</strong>  <%= interview.focus %> |
+                <strong>Experience:</strong>  <%= interview.experience %> |
+                <strong>Interview Language</strong>  <%= interview.interview_language %>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-danger"> <%= link_to "✘ Cancel", interview_path(interview), method: :delete, data: { confirm: "Are you sure?"} %></button>
+              </div>
+            </div>
           </li>
-      <% end %>
+        <% end %>
+      </div> 
+    </ul>
+  </div> 
+
+  <div>
+    <ul class="list-group list-group-flush">
+      <div class="card my-3">  
+        <div class="card-header text-light bg-secondary">
+          <h3> My pending Interviews</h3>
+        </div>
+        <% @pending_interviews.each do |interview| %>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-10">
+                <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+                <strong>Participant:</strong> None
+                <strong>Date: </strong>  <%= interview.time %> |
+                <strong>Focus:</strong>  <%= interview.focus %> |
+                <strong>Experience:</strong>  <%= interview.experience %> |
+                <strong>Interview Language</strong>  <%= interview.interview_language %>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-danger"> <%= link_to "✘ Delete", interview_path(interview), method: :delete, data: { confirm: "Are you sure?"} %></button>
+              </div>
+            </div>
+          </li>
+       <% end %>
+      </div>
     </ul>
   </div>
 
-  <div>
-    <h3> My pending Interviews</h3>
-    <hr>
-    <ul>
-      <% @pending_interviews.each do |interview| %>
-        <li>
-          <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
-          <strong>Participant:</strong> None
-          <strong>Date: </strong>  <%= interview.time %> |
-          <strong>Focus:</strong>  <%= interview.focus %> |
-          <strong>Experience:</strong>  <%= interview.experience %> |
-          <strong>Interview Language</strong>  <%= interview.interview_language %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div>
-    <h3>My past Interviews</h3>
-    <hr>
-    <ul>
-      <% @past_interviews.each do |interview| %>
-        <li>
-          <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
-          <% if interview.bookings.present? %>
-            <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
-          <% else  %>
-            <strong>Participant:</strong> None
-          <% end %>
-          <strong>Date:</strong>  <%= interview.time %> |
-          <strong>Focus:</strong>  <%= interview.focus %> |
-          <strong>Experience:</strong>  <%= interview.experience %> |
-          <strong>Interview Language:</strong>  <%= interview.interview_language %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+  <% if !@past_interviews.empty? %>
+    <div>
+      <ul class="list-group list-group-flush">
+        <div class="card my-3">
+          <div class="card-header text-light bg-secondary">
+            <h3>My past Interviews</h3>
+          </div>
+          <% @past_interviews.each do |interview| %>
+            <li class="list-group-item">
+              <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+              <% if interview.bookings.present? %>
+                <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
+              <% else  %>
+                <strong>Participant:</strong> None
+              <% end %>
+              <strong>Date:</strong>  <%= interview.time %> |
+              <strong>Focus:</strong>  <%= interview.focus %> |
+              <strong>Experience:</strong>  <%= interview.experience %> |
+              <strong>Interview Language:</strong>  <%= interview.interview_language %>
+            </li>
+          <% end %> 
+        </div>
+     </ul>
+    </div>
+  <% end %>
 </div>
 
