@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-banner" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9), #0000), url(<%= cl_image_path 'image_r3re4y.png'%>)">
+  <div class="container text-white my-5">
+    <div class="logo mb-5">
+      <%= cl_image_tag("CC_icon_white_text_white_t5myoe.png",
+      width: 250, height: 50) %>
+      <div class="logo_text">Hello World!</div>
+    </div>
+      <div class="mb-5" >
+        <h2>Practice coding interviews <br> with like-minded companions for free</h2>
+      </div>
+      <div>
+        <%= link_to "→ See available interviews", interviews_path, class: "btn btn-primary" %>
+      </div>
+  </div>
+</div>
