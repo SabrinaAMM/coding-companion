@@ -1,21 +1,31 @@
 <br>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-5">
-      <div class="interview-form p-4 mt-4 mb-4">
-        <h2>Create a new Interview</h2>
-
-        <%= simple_form_for [@interview] do |f| %>
-          <%= f.input :time %>
-          <%= f.input :focus %>
-          <%= f.input :experience%>
-          <%= f.input :interview_language %>
-          <br>
-          <%= f.button :submit, "+ Create Interview", class: "btn btn-success" %>
-        <% end %>
-
-      </div>
-    </div>
+<div class="form d-flex align-items-center">
+  <div class="form-text font-weight-bold">
+    <h2>Decide by your own <br> when you want to practice!</h2>
+    <p>Create an interview by yourself</p>
   </div>
+      <div class="#">
+        <div class="row">
+          <div class="col-6.05">
+            <div class="interview-form shadow-sm bg-white rounded px-5 py-3 mt-2 mb-4">
+              <%= simple_form_for [@interview] do |f| %>
+              <br>
+                <%= f.input :time %>
+                <br>
+                <%= f.input :focus, :placeholder => 'HTML, CSS, JavaScript, Ruby' %>
+                <br>
+                <%= f.input :experience, :collection => ['less then 1 year', '1 year', '2 years', '3 years', '4 years', '5 years', 'more']%>
+                <br>
+                <%= f.input :interview_language, :placeholder => 'german, spanish, french, etc.' %>
+                <br>
+                <div class="buttons-form d-flex justify-content-between">
+                  <%= link_to "Cancel", :back, {:class=>"btn btn-secondary col-4"} %>
+                  <%= f.button :submit, "+ Create Interview", class: "btn btn-primary p-2 col-4" %>
+                </div>
+                <br>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
-
