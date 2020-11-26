@@ -18,16 +18,16 @@ bruce = User.create!(email: "bruce@example.com", password: "123456", nickname: "
 
 puts "generating Interviews"
 
-interview1 = Interview.create!(time: DateTime.new(2009,9,1,17), focus: "JS CSS HTML", experience: "medium", interview_language: "english", user: john)
+interview1 = Interview.create!(time: DateTime.new(2020,11,26,17), focus: "JS CSS HTML", experience: "medium", interview_language: "english", user: john)
 interview2 = Interview.create!(time: DateTime.new(2020,12,12,17), focus: "HTML", experience: "entry level", interview_language: "german", user: mary)
 interview3 = Interview.create!(time: DateTime.new(2020,12,12,18), focus: "JS", experience: "Senior level", interview_language: "french", user: zoe)
-interview4 = Interview.create!(time: DateTime.new(2009,9,1,17), focus: "CSS", experience: "medium", interview_language: "japanese", user: peter)
-interview5 = Interview.create!(time: DateTime.new(2020,12,12,17), focus: "Ruby Rails", experience: "beginner", interview_language: "english", user: lisa)
-interview6 = Interview.create!(time: DateTime.new(2020,12,12,18), focus: "JS CSS", experience: "Senior level", interview_language: "dutch", user: bruce)
-interview7 = Interview.create!(time: DateTime.new(2009,9,1,17), focus: "Ruby", experience: "expert", interview_language: "french", user: john)
-interview8 = Interview.create!(time: DateTime.new(2020,12,12,17), focus: "JS CSS", experience: "medium", interview_language: "english", user: mary)
+interview4 = Interview.create!(time: DateTime.new(2009,11,26,17), focus: "CSS", experience: "medium", interview_language: "japanese", user: peter)
+interview5 = Interview.create!(time: DateTime.new(2020,11,27,17), focus: "Ruby Rails", experience: "beginner", interview_language: "english", user: lisa)
+interview6 = Interview.create!(time: DateTime.new(2020,11,27,18), focus: "JS CSS", experience: "Senior level", interview_language: "dutch", user: bruce)
+interview7 = Interview.create!(time: DateTime.new(2009,11,28,17), focus: "Ruby", experience: "expert", interview_language: "french", user: john)
+interview8 = Interview.create!(time: DateTime.new(2020,11,28,17), focus: "JS CSS", experience: "medium", interview_language: "english", user: mary)
 interview9 = Interview.create!(time: DateTime.new(2020,12,12,18), focus: "Ruby Rails", experience: "Senior level", interview_language: "german", user: zoe)
-interview10 = Interview.create!(time: DateTime.new(2009,9,1,17), focus: "JS CSS HTML", experience: "beginner", interview_language: "english", user: peter)
+interview10 = Interview.create!(time: DateTime.new(2009,12,10,17), focus: "JS CSS HTML", experience: "beginner", interview_language: "english", user: peter)
 interview11 = Interview.create!(time: DateTime.new(2020,12,12,17), focus: "Ruby", experience: "medium", interview_language: "english", user: lisa)
 interview12 = Interview.create!(time: DateTime.new(2020,12,12,18), focus: "JS CSS HTML", experience: "Senior level", interview_language: "spanish", user: bruce)
 
