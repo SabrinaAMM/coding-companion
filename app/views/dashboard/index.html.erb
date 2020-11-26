@@ -3,86 +3,90 @@
   <br>
 
   <div>
-    <ul class="list-group list-group-flush">
-      <div class="card my-3">
-        <div class="card-header text-light bg-secondary">
-          <h3> My upcoming Interviews</h3>
-        </div>
+    <h3> My upcoming Interviews</h3>
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Creator</th>
+          <th scope="col">Participant</th>
+          <th scope="col">Date</th>
+          <th scope="col">Programming Languages</th>
+          <th scope="col">Experience</th>
+          <th scope="col">Interview Language</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
         <% @upcoming_interviews.each do |interview| %>
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-10">
-                <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
-                <% if interview.bookings.present? %>
-                  <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
-                <% else  %>
-                  <strong>Participant:</strong> None
-                <% end %>
-                <strong>Date: </strong>  <%= interview.time %> |
-                <strong>Focus:</strong>  <%= interview.focus %> |
-                <strong>Experience:</strong>  <%= interview.experience %> |
-                <strong>Interview Language</strong>  <%= interview.interview_language %>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-danger"> <%= link_to "✘ Cancel", interview_path(interview), method: :delete, data: { confirm: "Are you sure?"} %></button>
-              </div>
-            </div>
-          </li>
+          <tr>
+            <th scope="row"></th>
+            <td class="table-light"><div class="badge badge-light  ml-2 p-3"> <%= link_to interview.user.nickname, user_path(interview.user)%> </div></td>
+            <% if interview.bookings.present? %>
+              <td class="table-light"><div class="badge badge-light ml-2 p-3"> <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> </div></td>
+            <% else  %>
+              <td class="table-light"><div class="badge badge-light ml-2 p-3"> None </div></td>
+            <% end %>
+            <td class="table-light"><div class="badge badge-light ml-2 p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
+            <td class="table-light"> <div class="badge badge-light ml-2 p-3"> <%= interview.focus %> </div></td>
+            <td class="table-light"> <div class="badge badge-light ml-2 p-3"><%= interview.experience %> </div></td>
+            <td class="table-light"><div class="badge badge-light ml-2 p-3"> <%= interview.interview_language %> </div></td>
+            <td class="table-light"><div class="badge badge-success ml-2 p-3">Confirmed  </div></td>
+            <td class="table-light"><%= link_to "→ Conduct Interview", interview_path(interview), class: "btn btn-primary" %> </div></td>
+            <td class="table-light">  <button type="button" class="btn btn-danger"> <%= link_to "✘ Cancel", interview_path(interview), method: :delete, data: { confirm: "Are you sure?"} %></button></td>
+          </tr>
         <% end %>
-      </div> 
-    </ul>
+      </tbody>
+    </table>
   </div> 
 
   <div>
-    <ul class="list-group list-group-flush">
-      <div class="card my-3">  
-        <div class="card-header text-light bg-secondary">
-          <h3> My pending Interviews</h3>
-        </div>
+    <h3> My pending Interviews</h3>
+    <table class="table">
+  
+      <tbody>
         <% @pending_interviews.each do |interview| %>
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-10">
-                <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
-                <strong>Participant:</strong> None
-                <strong>Date: </strong>  <%= interview.time %> |
-                <strong>Focus:</strong>  <%= interview.focus %> |
-                <strong>Experience:</strong>  <%= interview.experience %> |
-                <strong>Interview Language</strong>  <%= interview.interview_language %>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-danger"> <%= link_to "✘ Delete", interview_path(interview), method: :delete, data: { confirm: "Are you sure?"} %></button>
-              </div>
-            </div>
-          </li>
-       <% end %>
-      </div>
-    </ul>
+          <tr>
+            <th scope="row"></th>
+             <td class="table-light"><div class="badge badge-light ml-2 p-3"> <%= link_to interview.user.nickname, user_path(interview.user)%> </div> </td>
+             <td class="table-light"><div class="badge badge-ligh ml-2 p-3"> None  </div></td>
+             <td class="table-light"> <div class="badge badge-light ml-2 p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
+             <td class="table-light"><div class="badge badge-light ml-2 p-3"> <%= interview.focus %> </div></td>
+             <td class="table-light"><div class="badge badge-light ml-2 p-3"> <%= interview.experience %> </div></td>
+             <td class="table-light"> <div class="badge badge-light ml-2 p-3"><%= interview.interview_language %> </div></td>
+             <td class="table-light"><div class="badge badge-warning ml-2 p-3">Pending </div></td>
+             <td class="table-light"> <button type="button" class="btn btn-danger"> <%= link_to "✘ Delete", interview_path(interview), method: :delete, data: { confirm: "Are you sure?"} %></button></td>
+          </tr>
+        <% end %>  
+      </tbody>
+    </table>
   </div>
+
 
   <% if !@past_interviews.empty? %>
     <div>
-      <ul class="list-group list-group-flush">
-        <div class="card my-3">
-          <div class="card-header text-light bg-secondary">
-            <h3>My past Interviews</h3>
-          </div>
+     <h3>My past Interviews</h3>
+     <table class="table">
+        <tbody>
           <% @past_interviews.each do |interview| %>
-            <li class="list-group-item">
-              <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+            <tr>       
+              <th scope="row"></th>
+              <td class="table-light"> <div class="badge badge-light ml-2 p-3"><%= link_to interview.user.nickname, user_path(interview.user)%></div> </td>
               <% if interview.bookings.present? %>
-                <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
+                <td class="table-light"> <div class="badge badge-light ml-2 p-3"><%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%></div> </td>
               <% else  %>
-                <strong>Participant:</strong> None
+                <td class="table-light"><div class="badge badge-light ml-2 p-3"> None</div></td>
               <% end %>
-              <strong>Date:</strong>  <%= interview.time %> |
-              <strong>Focus:</strong>  <%= interview.focus %> |
-              <strong>Experience:</strong>  <%= interview.experience %> |
-              <strong>Interview Language:</strong>  <%= interview.interview_language %>
-            </li>
+              <td class="table-light"> <div class="badge badge-light  ml-2 p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
+              <td class="table-light"><div class="badge badge-light ml-2 p-3"> <%= interview.focus %></div></td>
+              <td class="table-light"><div class="badge badge-light ml-2 p-3"> <%= interview.experience %></div></td>
+              <td class="table-light"> <div class="badge badge-light ml-2 p-3"><%= interview.interview_language %></div></td>
+               <td class="table-light"><div class="badge badge-secondary ml-2 p-3">Over </div></td>
+            </tr>
           <% end %> 
-        </div>
-     </ul>
+       </tbody>
+     </table>
     </div>
   <% end %>
 </div>
