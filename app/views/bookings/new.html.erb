@@ -1,8 +1,7 @@
-<br>
-<div class="form d-flex align-items-center">
+<div class="form d-flex align-items-center" style="height: calc(100vh - 56px);">
   <div class="form-text font-weight-bold">
     <h2>Confirm your interview <br> with <%= @interview.user.nickname %>!</h2>
-    <p>Then you are all set for some interview practice.</p>
+    <p class="text-muted">Then you are all set for some interview practice 🚀</p>
   </div>
   <%= render partial: 'shared/card-new-booking', locals: { interview: @interview } %>
 </div>
