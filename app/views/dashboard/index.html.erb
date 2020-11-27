@@ -26,7 +26,7 @@
               <th scope="row" style="border-top: 3px solid #f1ece1"></th>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></td>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></td>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %> - <%= interview.time.hour + 2 %>:<%= interview.time.strftime("%M")%> </div></td>
+              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.time.strftime("%a %e.%m.%y | %H:%M") %> - <%= interview.time.hour + 2 %>:<%= interview.time.strftime("%M")%> </div></td>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.interview_language %></div></td>
@@ -69,7 +69,7 @@
               <% else  %>
                 <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block badge badge-light py-2 px-3"> None</div></td>
               <% end %>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %> - <%= interview.time.hour + 2 %>:<%= interview.time.strftime("%M")%> </div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.time.strftime("%a %e.%m.%y | %H:%M") %> - <%= interview.time.hour + 2 %>:<%= interview.time.strftime("%M")%> </div></td>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.interview_language %></div></td>
@@ -112,7 +112,7 @@
               <% else  %>
                  <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block badge badge-light py-2 px-3"> None</div></td>
               <% end %>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %> - <%= interview.time.hour + 2 %>:<%= interview.time.strftime("%M")%> </div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.time.strftime("%a %e.%m.%y | %H:%M") %> - <%= interview.time.hour + 2 %>:<%= interview.time.strftime("%M")%> </div></td>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.interview_language %></div></td>

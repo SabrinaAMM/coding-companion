@@ -32,7 +32,7 @@
   <h3 class="mt-5">In the Future</h3>
     <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
-        <% if interview.time >= Date.tomorrow %>
+        <% if interview.time.strftime("%Y-%m-%d") > Date.tomorrow.to_s %>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <%= render partial: 'shared/card-index', locals: { interview: interview } %>
           </div>

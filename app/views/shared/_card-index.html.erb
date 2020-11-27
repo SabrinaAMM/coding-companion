@@ -4,13 +4,13 @@
       <h5><%= link_to interview.user.nickname, interview_path(interview) %></h5>
     </div>
     <div class="mr-2">
-      <% if interview.interview_language == "french" %>
+      <% if interview.interview_language == "French" %>
         <%= cl_image_tag("france_j1bcee.png", width: 30, height: 30) %>
-      <% elsif interview.interview_language == "english" %>
+      <% elsif interview.interview_language == "English" %>
         <%= cl_image_tag("united-kingdom_vcgmov.png", width: 30, height: 30) %>
-      <% elsif interview.interview_language == "german" %>
+      <% elsif interview.interview_language == "German" %>
         <%= cl_image_tag("germany_uacttu.png", width: 30, height: 30) %>
-      <% elsif interview.interview_language == "spanish" %>
+      <% elsif interview.interview_language == "Spanish" %>
         <%= cl_image_tag("spain_v7zi4g.png", width: 30, height: 30) %>
       <% else %>
         <%= cl_image_tag("united-kingdom_vcgmov.png", width: 30, height: 30) %>

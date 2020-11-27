@@ -13,11 +13,11 @@
           <br>
             <%= f.input :time %>
             <br>
-            <%= f.input :focus, :placeholder => 'HTML, CSS, JavaScript, Ruby' %>
+            <%= f.input :focus, :collection => ['HTML', 'CSS', 'JavaScript', 'Ruby'] %>
             <br>
             <%= f.input :experience, :collection => ['Beginner', 'Medium Level', 'Senior Level', 'Expert']%>
             <br>
-            <%= f.input :interview_language, :placeholder => 'German, Spanish, French, etc.' %>
+            <%= f.input :interview_language, :collection => ['German', 'Spanish', 'French', 'English'] %>
             <br>
             <div class="buttons-form d-flex justify-content-between">
               <%= link_to "← Go back", :back, class: "btn btn-secondary" %>
