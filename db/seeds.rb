@@ -11,7 +11,7 @@ puts "generating Users"
 
 john = User.create!(email: "john@example.com", password: "123456", nickname: "Johnny_the_John", bio: "I got lots of experience with jobs and I worked a lot. But now I want a new job because new jobs are good.")
 mary = User.create!(email: "mary@example.com", password: "123456", nickname: "Cool_Mary", bio: "Hi, I am Mary and I love coding. I want to do coding as a job. For my next interview I look for cool training partners.")
-zoe = User.create!(email: "zoe@example.com", password: "123456", nickname: "zoe-bowie", bio: "I work in the IT industry for 20 years now. I love share my experience with you and to help you with your upcoming interviews!!")
+zoe = User.create!(email: "zoe@example.com", password: "123456", nickname: "zoe-bowie", bio: "I just finished my Computer Science degree and now I am looking for someone to practice with for a job interview.")
 peter = User.create!(email: "peter@example.com", password: "123456", nickname: "coding-king", bio: "I am the KING OF CODING and I will show you how it works so you get every job you want!")
 lisa = User.create!(email: "lisa@example.com", password: "123456", nickname: "lizzy101", bio: "studied in England, worked as developer in Seoul, worked as senior develper in Tokio")
 bruce = User.create!(email: "bruce@example.com", password: "123456", nickname: "brucybruce", bio: "I got 10 years of experience in Ruby and Ruby on rails, CSS, JS and Python. I can help you prepare for your job interview!")
