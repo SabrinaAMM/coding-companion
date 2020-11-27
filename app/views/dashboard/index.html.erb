@@ -1,88 +1,90 @@
 <div class="container mt-4" >
   <h1>Dashboard</h1>
   <br>
-
   <div>
-    <ul class="list-group list-group-flush">
-      <div class="card my-3">
-        <div class="card-header text-light bg-secondary">
-          <h3> My upcoming Interviews</h3>
-        </div>
+    <h3> My upcoming Interviews</h3>
+    <table class="table bg-white">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" ></th>
+          <th scope="col" style="width:10%">Creator</th>
+          <th scope="col" style="width:10%">Participant</th>
+          <th scope="col" style="width:15%">Date</th>
+          <th scope="col" style="width:15%">Programming Languages</th>
+          <th scope="col" style="width:15%">Experience</th>
+          <th scope="col" style="width:10%">Interview Language</th>
+          <th scope="col" style="width:10%">Status</th>
+          <th scope="col" style="width:15%"></th>
+        </tr>
+      </thead>
+      <tbody>
         <% @upcoming_interviews.each do |interview| %>
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-10">
-                <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
-                <% if interview.bookings.present? %>
-                  <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
-                <% else  %>
-                  <strong>Participant:</strong> None
-                <% end %>
-                <strong>Date: </strong>  <%= interview.time %> |
-                <strong>Focus:</strong>  <%= interview.focus %> |
-                <strong>Experience:</strong>  <%= interview.experience %> |
-                <strong>Interview Language</strong>  <%= interview.interview_language %>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-danger"> <%= link_to "✘ Cancel", interview_path(interview), method: :delete, data: { confirm: "Are you sure?"} %></button>
-              </div>
-            </div>
-          </li>
+          <tr>
+            <th scope="row"></th>
+            <td class="text-center align-middle" ><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.user)%></td>
+            <td class="text-center align-middle" ><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.bookings.first.user)%></td>
+            <td class ="align-middle"><div class="d-block badge badge-light p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
+            <td class ="align-middle"><div class="d-block badge badge-light p-3"><%= interview.focus %></div></td>
+            <td class ="align-middle"><div class="d-block badge badge-light p-3"><%= interview.experience %></div></td>
+            <td class ="align-middle"><div class="d-block badge badge-light p-3"><%= interview.interview_language %></div></td>
+            <td class ="align-middle"><div class="d-block badge badge-success p-3 text-light">Confirmed</div></td>
+            <td class ="align-middle"><%= link_to "→ Interview", interview_path(interview), class: "d-block badge badge-primary p-3" %></td>
+          </tr>
         <% end %>
-      </div> 
-    </ul>
+      </tbody>
+    </table>
   </div> 
 
   <div>
-    <ul class="list-group list-group-flush">
-      <div class="card my-3">  
-        <div class="card-header text-light bg-secondary">
-          <h3> My pending Interviews</h3>
-        </div>
+    <h3> My pending Interviews</h3>
+    <table class="table bg-white">
+      <tbody>
         <% @pending_interviews.each do |interview| %>
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-10">
-                <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
-                <strong>Participant:</strong> None
-                <strong>Date: </strong>  <%= interview.time %> |
-                <strong>Focus:</strong>  <%= interview.focus %> |
-                <strong>Experience:</strong>  <%= interview.experience %> |
-                <strong>Interview Language</strong>  <%= interview.interview_language %>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-danger"> <%= link_to "✘ Delete", interview_path(interview), method: :delete, data: { confirm: "Are you sure?"} %></button>
-              </div>
-            </div>
-          </li>
-       <% end %>
-      </div>
-    </ul>
+          <tr>
+            <th scope="row"></th>
+            <td class="text-center" style="width:10%"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.user)%> </div> </td>
+              <% if interview.bookings.present? %>
+                <td class="text-center" style="width:10%"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.bookings.first.user)%> </div></td>
+              <% else  %>
+                <td class="text-center" style="width:10%"><i class="fas fa-question-circle" style= "font-size: 40px; color: grey"></i></td>
+              <% end %>
+            <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
+            <td class="text-center" style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.focus %></div></td>
+            <td class="text-center" style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.experience %></div></td>
+            <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.interview_language %></div></td>
+            <td class="text-center" style="width:10%"><div class="d-block badge badge-warning p-3">Pending </div></td>
+            <td class="text-center" style="width:15%"></td>
+          </tr>
+        <% end %>  
+      </tbody>
+    </table>  
   </div>
+
 
   <% if !@past_interviews.empty? %>
     <div>
-      <ul class="list-group list-group-flush">
-        <div class="card my-3">
-          <div class="card-header text-light bg-secondary">
-            <h3>My past Interviews</h3>
-          </div>
+     <h3>My past Interviews</h3>
+     <table class="table bg-white">
+        <tbody>
           <% @past_interviews.each do |interview| %>
-            <li class="list-group-item">
-              <strong>Creator:</strong>  <%= link_to interview.user.nickname, user_path(interview.user)%> |
+            <tr>       
+              <th scope="row"></th>
+              <td class="text-center" style="width:10%"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.user)%></div> </td>
               <% if interview.bookings.present? %>
-                <strong>Participant:</strong>  <%= link_to interview.bookings.first.user.nickname, user_path(interview.bookings.first.user)%> |
+               <td class="text-center" style="width:10%"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.bookings.first.user)%></div> </td>
               <% else  %>
-                <strong>Participant:</strong> None
+                <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"> None</div></td>
               <% end %>
-              <strong>Date:</strong>  <%= interview.time %> |
-              <strong>Focus:</strong>  <%= interview.focus %> |
-              <strong>Experience:</strong>  <%= interview.experience %> |
-              <strong>Interview Language:</strong>  <%= interview.interview_language %>
-            </li>
+              <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
+              <td class="text-center" style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.focus %></div></td>
+              <td class="text-center" style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.experience %></div></td>
+              <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.interview_language %></div></td>
+              <td class="text-center" style="width:10%"><div class="d-block badge badge-secondary p-3 text-light">Over</div></td>
+              <td class="text-center" style="width:15%"></td>
+            </tr>
           <% end %> 
-        </div>
-     </ul>
+       </tbody>
+     </table>
     </div>
   <% end %>
 </div>
