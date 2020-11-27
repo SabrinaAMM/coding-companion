@@ -13,22 +13,22 @@
           <th scope="col" style="width:15%">Programming Languages</th>
           <th scope="col" style="width:15%">Experience</th>
           <th scope="col" style="width:10%">Interview Language</th>
-          <th scope="col" style="width:10%" >Status</th>
-          <th scope="col" style="width:15%" ></th>
+          <th scope="col" style="width:10%">Status</th>
+          <th scope="col" style="width:15%"></th>
         </tr>
       </thead>
       <tbody>
         <% @upcoming_interviews.each do |interview| %>
           <tr>
             <th scope="row"></th>
-            <td class="text-center" ><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.user)%></td>
-            <td class="text-center" ><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.bookings.first.user)%></td>
-            <td ><div class="d-block badge badge-light p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
-            <td ><div class="d-block badge badge-light p-3"><%= interview.focus %> </div></td>
-            <td><div class="d-block badge badge-light p-3"><%= interview.experience %> </div></td>
-            <td><div class="d-block badge badge-light p-3"><%= interview.interview_language %> </div></td>
-            <td><div class="d-block badge badge-success p-3 text-light">Confirmed  </div></td>
-            <td><%= link_to "→ Interview", interview_path(interview), class: "btn btn-primary" %> </div></td>
+            <td class="text-center align-middle" ><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.user)%></td>
+            <td class="text-center align-middle" ><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar"), user_path(interview.bookings.first.user)%></td>
+            <td class ="align-middle"><div class="d-block badge badge-light p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
+            <td class ="align-middle"><div class="d-block badge badge-light p-3"><%= interview.focus %></div></td>
+            <td class ="align-middle"><div class="d-block badge badge-light p-3"><%= interview.experience %></div></td>
+            <td class ="align-middle"><div class="d-block badge badge-light p-3"><%= interview.interview_language %></div></td>
+            <td class ="align-middle"><div class="d-block badge badge-success p-3 text-light">Confirmed</div></td>
+            <td class ="align-middle"><%= link_to "→ Interview", interview_path(interview), class: "d-block badge badge-primary p-3" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -48,12 +48,12 @@
               <% else  %>
                 <td class="text-center" style="width:10%"><i class="fas fa-question-circle" style= "font-size: 40px; color: grey"></i></td>
               <% end %>
-            <td style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
-            <td style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.focus %> </div></td>
-            <td style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.experience %> </div></td>
-            <td style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.interview_language %> </div></td>
-            <td style="width:10%"><div class="d-block badge badge-warning p-3">Pending </div></td>
-            <td style="width:15%"></td>
+            <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
+            <td class="text-center" style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.focus %></div></td>
+            <td class="text-center" style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.experience %></div></td>
+            <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.interview_language %></div></td>
+            <td class="text-center" style="width:10%"><div class="d-block badge badge-warning p-3">Pending </div></td>
+            <td class="text-center" style="width:15%"></td>
           </tr>
         <% end %>  
       </tbody>
@@ -75,12 +75,12 @@
               <% else  %>
                 <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"> None</div></td>
               <% end %>
-              <td style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
-              <td style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.focus %></div></td>
-              <td style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.experience %></div></td>
-              <td style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.interview_language %></div></td>
-              <td style="width:10%"><div class="d-block badge badge-secondary p-3 text-light">Over</div></td>
-              <td style="width:15%"></td>
+              <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.time.strftime("%a %e.%m.%y | %l:%M") %></div></td>
+              <td class="text-center" style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.focus %></div></td>
+              <td class="text-center" style="width:15%"><div class="d-block badge badge-light p-3"><%= interview.experience %></div></td>
+              <td class="text-center" style="width:10%"><div class="d-block badge badge-light p-3"><%= interview.interview_language %></div></td>
+              <td class="text-center" style="width:10%"><div class="d-block badge badge-secondary p-3 text-light">Over</div></td>
+              <td class="text-center" style="width:15%"></td>
             </tr>
           <% end %> 
        </tbody>
