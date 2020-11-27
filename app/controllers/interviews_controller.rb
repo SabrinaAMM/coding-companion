@@ -2,8 +2,14 @@ class InterviewsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    # add Search!
-    @interviews = Interview.all
+    if params[:query].present?
+      sql_query = "focus ILIKE :query OR experience ILIKE :query or interview_language ILIKE :query"
+      @interviews = Interview.where(sql_query, query: "%#{params[:query]}%")
+    elsif params["/interviews"].present?
+      @interviews = Interview.where(focus: params["/interviews"][:focus]).where(experience: params["/interviews"][:experience]).where(interview_language: params["/interviews"][:interview_language])
+    else
+      @interviews = Interview.all
+    end
   end
 
   def show
