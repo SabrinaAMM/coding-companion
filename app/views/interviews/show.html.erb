@@ -2,14 +2,15 @@
   <div class="row">
 
     <div class="col-5 p-0 text-center">
-      <div class="d-flex align-items-center justify-content-center" style="height: calc(100vh - 66px)">
-        <h2>Interview Case (Instructions)</h2>
+      <div class="d-flex align-items-center justify-content-center" style="height: calc(100vh - 56px)">
+        <h2>Interview Case <br> (Instructions)</h2>
       </div>
     </div>
 
     <div class="col-7 p-0 text-center">
-      <div class="d-flex align-items-center justify-content-center bg-dark" style="height: calc(100vh - 66px - 150px)">
-        <%= cl_image_tag("Stockfoto_Videocall_u3po4j.jpg", class: "Videocall-dummy") %>
+      <div class="d-flex align-items-center justify-content-center bg-dark" style="height: calc(100vh - 56px - 150px);
+      background-image: url(<%= cl_image_path 'Stockfoto_Videocall_u3po4j.jpg'%>);
+      background-position: center; background-size: cover;">
       </div>
       <div class="d-flex align-items-center justify-content-center bg-secondary" style="height: calc(150px)">
         <h2>Chat</h2>
