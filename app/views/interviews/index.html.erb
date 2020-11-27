@@ -1,15 +1,13 @@
 <div class="container">
-  <div>
+  <div class="mt-5">
     <h1>UPCOMING SESSIONS</h1>
   </div>
 
-  <br>
-  <div>
+  <div class="mt-5">
     <h4><em>Filter (Date/time, programming language, interview language, experience...)</em></h4>
   </div>
-  <br>
 
-  <h2>Today</h2>
+  <h3 class="mt-5">Today</h3>
     <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
         <% if interview.time.today? %>
@@ -19,8 +17,8 @@
         <% end %>
       <% end %>
     </div>
-  <br>
-  <h2>Tomorrow</h2>
+
+  <h3 class="mt-5">Tomorrow</h3>
     <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
         <% if interview.time.strftime("%Y-%m-%d") == Date.tomorrow.to_s %>
@@ -30,8 +28,8 @@
         <% end %>
       <% end %>
     </div>
-  <br>
-  <h2>In the Future</h2>
+
+  <h3 class="mt-5">In the Future</h3>
     <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
         <% if interview.time >= Date.tomorrow %>
