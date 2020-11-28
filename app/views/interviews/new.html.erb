@@ -9,25 +9,28 @@
     <div class="row">
       <div class="col-6.05">
         <div class="interview-form shadow-sm bg-white rounded px-5 py-3">
-          <%= simple_form_for [@interview] do |f| %>
-          <br>
-            <%= f.input :time %>
-            <br>
-            <%= f.input :focus, :collection => ['HTML', 'CSS', 'JavaScript', 'Ruby'] %>
-            <br>
-            <%= f.input :experience, :collection => ['Beginner', 'Medium Level', 'Senior Level', 'Expert']%>
-            <br>
-            <%= f.input :interview_language, :collection => ['German', 'Spanish', 'French', 'English'] %>
-            <br>
-            <div class="buttons-form d-flex justify-content-between">
-              <%= link_to "← Go back", :back, class: "btn btn-secondary" %>
-              <%= f.button :submit, "→ Submit", class: "btn btn-primary" %>
-            </div>
-            <br>
-          <% end %>
-        </div>
+          <div id='interview-dates' data-unavailable="<%= @interview.unavailable_dates.to_json %>">
+            <%= simple_form_for [@interview] do |f| %>
+              <br>
+              <%= f.input :start_time, as: :string %>
+              <br>
+              <%= f.input :end_time, as: :string %>
+               <br>
+              <%= f.input :focus, :collection => ['HTML', 'CSS', 'JavaScript', 'Ruby'] %>
+              <br>
+              <%= f.input :experience, :collection => ['Beginner', 'Medium Level', 'Senior Level', 'Expert']%>
+              <br>
+              <%= f.input :interview_language, :collection => ['German', 'Spanish', 'French', 'English'] %>
+              <br>
+              <div class="buttons-form d-flex justify-content-between">
+                <%= link_to "← Go back", :back, class: "btn btn-secondary" %>
+                <%= f.button :submit, "→ Submit", class: "btn btn-primary" %>
+              </div>
+              <br>
+            <% end %>
+          </div>
+        </div>  
       </div>
     </div>
   </div>
-
 </div>
