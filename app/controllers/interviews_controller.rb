@@ -6,8 +6,7 @@ class InterviewsController < ApplicationController
       sql_query = "users.nickname ILIKE :query"
       @interviews = Interview.joins(:user).where(sql_query, query: "%#{params[:query]}%")
     elsif params["/interviews"].present?
-
-      @interviews = Interview.where(focus: params["/interviews"][:focus]).where(experience: params["/interviews"][:experience]).where(interview_language: params["/interviews"][:interview_language]).where(date: params["/interviews"][:date])
+      @interviews = Interview.filter(params["/interviews"].slice(:date, :interview_language, :experience, :focus))
     else
       @interviews = Interview.all
     end
@@ -49,6 +48,6 @@ class InterviewsController < ApplicationController
   end
 
   def interview_params
-    params.require(:interview).permit(:start_time, :end_time, :focus, :experience, :interview_language, :date)
+    params.require(:interview).permit(:date, :start_time, :end_time, :focus, :experience, :interview_language)
   end
 end

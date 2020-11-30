@@ -19,7 +19,7 @@ rob = User.create!(email: "rob@example.com", password: "123456", nickname: "robb
 
 puts "generating Interviews"
 
-interview1 = Interview.create!(date: Date.parse("30.11.2020"), start_time: Time.new(2020,11,29,17), end_time: Time.new(2020,11,29,19), focus: "Ruby", experience: "Medium Level", interview_language: "English", user: john)
+interview1 = Interview.create!(date: Date.parse("01.12.2020"), start_time: Time.new(2020,11,29,17), end_time: Time.new(2020,11,29,19), focus: "Ruby", experience: "Medium Level", interview_language: "English", user: john)
 interview2 = Interview.create!(date: Date.parse("30.11.2020"), start_time: Time.new(2020,12,12,17), end_time: Time.new(2020,12,12,19), focus: "Ruby", experience: "Beginner", interview_language: "German", user: mary)
 interview3 = Interview.create!(date: Date.parse("30.11.2020"), start_time: Time.new(2020,11,27,18), end_time: Time.new(2020,11,27,19), focus: "Ruby", experience: "Senior Level", interview_language: "English", user: zoe)
 interview4 = Interview.create!(date: Date.parse("30.11.2020"), start_time: Time.new(2020,11,28,17), end_time: Time.new(2020,11,28,19), focus: "Ruby", experience: "Medium Level", interview_language: "Spanish", user: peter)

@@ -5,11 +5,11 @@
 
   <br>
   <div class="search-bar row justify-content-between">
-    <div id='interview-dates' data-unavailable="<%= @interviews.to_json %>">
+    <div id='interview-dates'>
       <%= simple_form_for interviews_path, method: :get, wrapper: :inline_form, html: {class: "form-inline w-100"} do |f| %>
-        <%= f.input :date, as: :date %>
+        <%= f.input :date, as: :string, input_html: { class: "mr-sm-2" }, placeholder: "Date" %>
         <%= f.input :focus, as: :select, :collection => ['Ruby', 'JavaScript', 'HTML', 'CSS', 'PHP', 'Python', 'Java', 'C++', 'C#', 'Agora', 'Curl'], input_html: { class: "mr-sm-2" }, prompt: "Focus" %>
-        <%= f.input :interview_language, :collection => ['english', 'german', 'french', 'spanish'], input_html: { class: "mr-sm-2" }, prompt: "Language" %>
+        <%= f.input :interview_language, :collection => ['English', 'German', 'French', 'Spanish'], input_html: { class: "mr-sm-2" }, prompt: "Language" %>
         <%= f.input :experience, :collection => ['Beginner', 'Medium Level', 'Senior Level', 'Expert'], input_html: { class: " mr-sm-2" }, prompt: "Experience" %>
         <%= text_field_tag :query, params[:query], class: "col-4 mr-sm-2 form-control", placeholder: "Search for Nickname..." %>
         <%= f.button :submit, "Search", class: "btn btn-success col-2" %>

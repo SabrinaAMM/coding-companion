@@ -9,12 +9,12 @@
     <div class="row">
       <div class="col-6.05">
         <div class="interview-form shadow-sm bg-white rounded px-5 py-3">
-          <div id='interview-dates' data-unavailable="<%= @interview.unavailable_dates.to_json %>">
+          <div id='interview-dates'>
             <%= simple_form_for [@interview] do |f| %>
               <br>
               <div class="d-flex flex-row">
 
-                <div class="flex-item mr-2"><%= f.input :date, as: :date %></div>
+                <div class="flex-item mr-2"><%= f.input :date, as: :string %></div>
                 <div class="flex-item mr-2"><%= f.input :start_time, as: :string %></div>
                 <br>
                 <div class="flex-item"> <%= f.input :end_time, as: :string %></div>
