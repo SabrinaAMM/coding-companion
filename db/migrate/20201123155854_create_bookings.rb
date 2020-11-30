@@ -5,6 +5,8 @@ class CreateBookings < ActiveRecord::Migration[6.0]
       t.references :interview, null: false, foreign_key: true
 
       t.timestamps
+
+   
     end
   end
 end

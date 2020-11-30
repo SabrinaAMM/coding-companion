@@ -12,28 +12,28 @@ class DashboardController < ApplicationController
     @upcoming_interviews = []
     @pending_interviews = []
     @booked_interviews.each do |interview|
-      if interview.time >= DateTime.now
+      if interview.start_time >= DateTime.now
         @upcoming_interviews << interview
       end
     end
 
     @created_interviews.each do |interview|
-      if interview.bookings.present? && interview.time >= DateTime.now
+      if interview.bookings.present? && interview.start_time >= DateTime.now
         @upcoming_interviews << interview
-      elsif interview.time >= DateTime.now
+      elsif interview.start_time >= DateTime.now
         @pending_interviews << interview
       end
     end
 
     @past_interviews = []
     @created_interviews.each do |interview|
-      if interview.time < DateTime.now
+      if interview.start_time < DateTime.now
         @past_interviews << interview
       end
     end
 
     @booked_interviews.each do |interview|
-      if interview.time < DateTime.now
+      if interview.start_time < DateTime.now
         @past_interviews << interview
       end
     end
