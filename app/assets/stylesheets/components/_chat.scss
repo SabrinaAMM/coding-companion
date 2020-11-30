@@ -1,0 +1,22 @@
+.chat-input {
+  position: relative;
+}
+
+.chat-message {
+  border: none;
+  background-color: $light-gray;
+  resize: none;
+}
+
+.chat-button {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  border: none;
+  color: $light-blue;
+  background-color: transparent;
+
+  &:hover {
+    color: $blue;
+  }
+}

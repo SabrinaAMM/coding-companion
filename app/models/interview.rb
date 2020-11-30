@@ -2,13 +2,14 @@ class Interview < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :users, through: :bookings
+  has_many :messages, dependent: :destroy
+
   validates :focus, presence: true
   validates :user, presence: true
   validates :experience, presence: true
   validates :interview_language, presence: true
-
   validates :start_time, :end_time, presence: true
-  validate :end_time_after_start_time
+  # validates :end_time_after_start_time
 
   def unavailable_dates
     bookings.pluck(:start_time, :end_time).map do |range|

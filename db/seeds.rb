@@ -3,6 +3,7 @@ require 'open-uri'
 
 puts "clearing data"
 
+Message.destroy_all
 Booking.destroy_all
 Interview.destroy_all
 User.destroy_all
@@ -19,7 +20,7 @@ rob = User.create!(email: "rob@example.com", password: "123456", nickname: "robb
 
 puts "generating Interviews"
 
-interview1 = Interview.create!(start_time: DateTime.new(2020,11,29,17), end_time: DateTime.new(2020,11,29,19), focus: "Ruby", experience: "Medium Level", interview_language: "English", user: john)
+interview1 = Interview.create!(start_time: DateTime.new(2020,11,30,17), end_time: DateTime.new(2020,11,29,19), focus: "Ruby", experience: "Medium Level", interview_language: "English", user: john)
 interview2 = Interview.create!(start_time: DateTime.new(2020,12,12,17), end_time: DateTime.new(2020,12,12,19), focus: "Ruby", experience: "Beginner", interview_language: "German", user: mary)
 interview3 = Interview.create!(start_time: DateTime.new(2020,11,27,18), end_time: DateTime.new(2020,11,27,19), focus: "Ruby", experience: "Senior Level", interview_language: "English", user: zoe)
 interview4 = Interview.create!(start_time: DateTime.new(2020,11,28,17), end_time: DateTime.new(2020,11,28,19), focus: "Ruby", experience: "Medium Level", interview_language: "Spanish", user: peter)
