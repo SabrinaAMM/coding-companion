@@ -11,7 +11,7 @@
         <%= f.input :focus, as: :select, :collection => ['Ruby', 'JavaScript', 'HTML', 'CSS', 'PHP', 'Python', 'Java', 'C++', 'C#', 'Agora', 'Curl'], input_html: { class: "mr-sm-2" }, prompt: "Focus" %>
         <%= f.input :interview_language, :collection => ['English', 'German', 'French', 'Spanish'], input_html: { class: "mr-sm-2" }, prompt: "Language" %>
         <%= f.input :experience, :collection => ['Beginner', 'Medium Level', 'Senior Level', 'Expert'], input_html: { class: " mr-sm-2" }, prompt: "Experience" %>
-        <%= text_field_tag :query, params[:query], class: "col-4 mr-sm-2 form-control", placeholder: "Search for Nickname..." %>
+        <%= text_field_tag :query, params[:query], class: "col-2 mr-sm-2 form-control", placeholder: "Search for Nickname..." %>
         <%= f.button :submit, "Search", class: "btn btn-success col-2" %>
       <% end %>
     </div>
