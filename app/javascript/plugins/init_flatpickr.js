@@ -16,7 +16,7 @@ flatpickr(startTimeInput, {
   disable: unavailableDates,
   enableTime: true,
   altInput: true,
-  altFormat: "F j, Y | H:i",
+  altFormat: "M j, Y | H:i",
   dateFormat: "d-m-Y H:i",
   time_24hr: true,
   plugins: [ confirmDatePlugin(
@@ -39,7 +39,7 @@ startTimeInput.addEventListener("change", (e) => {
     disable: unavailableDates,
     enableTime: true,
     altInput: true,
-    altFormat: "F j, Y | H:i",
+    altFormat: "M j, Y | H:i",
     dateFormat: "d-m-Y H:i",
     time_24hr: true,
     plugins: [ confirmDatePlugin(

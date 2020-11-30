@@ -8,8 +8,10 @@ class InterviewsController < ApplicationController
 
   def show
     find_interview
+    setup_twilio_token
     # authorize @interview
     @user = current_user
+    @other_user = @interview.other_user(current_user)
   end
 
   def new
@@ -43,5 +45,14 @@ class InterviewsController < ApplicationController
 
   def interview_params
     params.require(:interview).permit(:start_time, :end_time, :focus, :experience, :interview_language)
+  end
+
+  def setup_twilio_token
+    twilio = TwilioService.new
+    token_data = twilio.generate_token(@interview, current_user)
+    @token = {
+      token: token_data,
+      room: "video-#{@interview.id}"
+    }
   end
 end

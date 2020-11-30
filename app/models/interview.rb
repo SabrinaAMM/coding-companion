@@ -10,9 +10,18 @@ class Interview < ApplicationRecord
   validates :start_time, :end_time, presence: true
   validate :end_time_after_start_time
 
+
   def unavailable_dates
     bookings.pluck(:start_time, :end_time).map do |range|
       { from: range[0], to: range[1] }
+    end
+  end
+
+  def other_user(user)
+    if user == self.user
+      return self.users.first
+    else
+      return self.user
     end
   end
 
