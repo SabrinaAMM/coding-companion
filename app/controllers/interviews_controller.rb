@@ -3,10 +3,10 @@ class InterviewsController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "focus ILIKE :query OR experience ILIKE :query or interview_language ILIKE :query"
-      @interviews = Interview.where(sql_query, query: "%#{params[:query]}%")
+      sql_query = "users.nickname ILIKE :query"
+      @interviews = Interview.joins(:user).where(sql_query, query: "%#{params[:query]}%")
     elsif params["/interviews"].present?
-      @interviews = Interview.where(focus: params["/interviews"][:focus]).where(experience: params["/interviews"][:experience]).where(interview_language: params["/interviews"][:interview_language])
+      @interviews = Interview.where(focus: params["/interviews"][:focus]).where(experience: params["/interviews"][:experience]).where(interview_language: params["/interviews"][:interview_language]).where(start_time: params["/interviews"][:start_time])
     else
       @interviews = Interview.all
     end
