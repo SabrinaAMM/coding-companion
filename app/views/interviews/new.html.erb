@@ -12,10 +12,12 @@
           <div id='interview-dates' data-unavailable="<%= @interview.unavailable_dates.to_json %>">
             <%= simple_form_for [@interview] do |f| %>
               <br>
-              <%= f.input :start_time, as: :string %>
-              <br>
-              <%= f.input :end_time, as: :string %>
-               <br>
+              <div class="d-flex flex-row">
+                <div class="flex-item mr-2"><%= f.input :start_time, as: :string %></div>
+                <br>
+                <div class="flex-item"> <%= f.input :end_time, as: :string %></div>
+                <br>
+              </div>
               <%= f.input :focus, :collection => ['HTML', 'CSS', 'JavaScript', 'Ruby'] %>
               <br>
               <%= f.input :experience, :collection => ['Beginner', 'Medium Level', 'Senior Level', 'Expert']%>
