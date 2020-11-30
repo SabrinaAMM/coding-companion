@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_144125) do
+ActiveRecord::Schema.define(version: 2020_11_28_095246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,13 +46,14 @@ ActiveRecord::Schema.define(version: 2020_11_25_144125) do
   end
 
   create_table "interviews", force: :cascade do |t|
-    t.datetime "time"
+    t.datetime "start_time"
     t.string "focus"
     t.string "experience"
     t.string "interview_language"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "end_time"
     t.index ["user_id"], name: "index_interviews_on_user_id"
   end
 

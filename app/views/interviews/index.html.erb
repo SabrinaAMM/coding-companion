@@ -1,5 +1,5 @@
 <div class="container">
-  <div>
+  <div class="mt-5">
     <h1>UPCOMING SESSIONS</h1>
   </div>
 
@@ -17,32 +17,34 @@
   </div>
   <br>
 
-  <h2>Today</h2>
+  <h3 class="mt-5">Today</h3>
+
     <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
-        <% if interview.time.today? %>
+        <% if interview.start_time.today? %>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <%= render partial: 'shared/card-index', locals: { interview: interview } %>
           </div>
         <% end %>
       <% end %>
     </div>
-  <br>
-  <h2>Tomorrow</h2>
+
+  <h3 class="mt-5">Tomorrow</h3>
     <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
-        <% if interview.time.strftime("%Y-%m-%d") == Date.tomorrow.to_s %>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+        <% if interview.start_time.strftime("%Y-%m-%d") == Date.tomorrow.to_s %>
+          <div class="col-3">
             <%= render partial: 'shared/card-index', locals: { interview: interview } %>
           </div>
         <% end %>
       <% end %>
     </div>
-  <br>
-  <h2>In the Future</h2>
+
+  <h3 class="mt-5">In the Future</h3>
     <div class="row justify-content-start">
       <% @interviews.each do |interview| %>
-        <% if interview.time.strftime("%Y-%m-%d") > Date.tomorrow.to_s %>
+        <% if interview.start_time.strftime("%Y-%m-%d") > Date.tomorrow.to_s %>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <%= render partial: 'shared/card-index', locals: { interview: interview } %>
           </div>

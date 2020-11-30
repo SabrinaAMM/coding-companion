@@ -1,42 +1,7 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <div class="d-flex flex-column align-items-center">
-        <h2 class="font-weight-bold text-center mt-5 mb-5">CONFIRM YOUR INTERVIEW WITH <br> <%= @interview.user.nickname %></h2>
-        <div class="bg-white rounded shadow-sm p-3" style="height: 400px; width: 350px;" >
-          <ul>
-
-            <li>
-              <i class="far fa-clock"></i> |
-              <%= @interview.time.strftime("%d %b %Y, %H:%M") %>
-            </li>
-
-            <li>
-              <i class="fas fa-terminal"></i> |
-              <%= @interview.focus %>
-            </li>
-
-            <li>
-              <i class="far fa-comments"></i> |
-              <%= @interview.interview_language %>
-            </li>
-
-            <li>
-              <%= @interview.user.nickname %>:
-              <%= @interview.user.bio %>
-            </li>
-
-            <li>
-              <%= link_to "← Go Back", :back, class: "btn btn-secondary" %>
-            </li>
-
-            <li>
-              <%= link_to "→ Confirm booking", interview_bookings_path(@interview), method: :post, class: "btn btn-primary" %>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
+<div class="form d-flex align-items-center" style="height: calc(100vh - 56px);">
+  <div class="form-text font-weight-bold">
+    <h2>Confirm your interview <br> with <%= @interview.user.nickname %>!</h2>
+    <p class="text-muted">Then you are all set for some interview practice 🚀</p>
   </div>
+  <%= render partial: 'shared/card-new-booking', locals: { interview: @interview } %>
 </div>

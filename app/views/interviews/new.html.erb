@@ -1,31 +1,38 @@
-<br>
-<div class="form d-flex align-items-center">
+<div class="form d-flex align-items-center" style="height: calc(100vh - 56px)">
+
   <div class="form-text font-weight-bold">
-    <h2>Decide by your own <br> when you want to practice!</h2>
-    <p>Create an interview by yourself</p>
+    <h2>Decide yourself <br> when you want to practice!</h2>
+    <p class="text-muted">Create a new interview others can join 👍</p>
   </div>
-      <div class="#">
-        <div class="row">
-          <div class="col-6.05">
-            <div class="interview-form shadow-sm bg-white rounded px-5 py-3 mt-2 mb-4">
-              <%= simple_form_for [@interview] do |f| %>
+
+  <div class="#">
+    <div class="row">
+      <div class="col-6.05">
+        <div class="interview-form shadow-sm bg-white rounded px-5 py-3">
+          <div id='interview-dates' data-unavailable="<%= @interview.unavailable_dates.to_json %>">
+            <%= simple_form_for [@interview] do |f| %>
               <br>
-                <%= f.input :time %>
+              <div class="d-flex flex-row">
+                <div class="flex-item mr-2"><%= f.input :start_time, as: :string %></div>
                 <br>
-                <%= f.input :focus, :placeholder => 'HTML, CSS, JavaScript, Ruby' %>
+                <div class="flex-item"> <%= f.input :end_time, as: :string %></div>
                 <br>
-                <%= f.input :experience, :collection => ['less then 1 year', '1 year', '2 years', '3 years', '4 years', '5 years', 'more']%>
-                <br>
-                <%= f.input :interview_language, :placeholder => 'german, spanish, french, etc.' %>
-                <br>
-                <div class="buttons-form d-flex justify-content-between">
-                  <%= link_to "Cancel", :back, {:class=>"btn btn-secondary col-4"} %>
-                  <%= f.button :submit, "+ Create Interview", class: "btn btn-primary p-2 col-4" %>
-                </div>
-                <br>
-              <% end %>
-            </div>
+              </div>
+              <%= f.input :focus, :collection => ['HTML', 'CSS', 'JavaScript', 'Ruby'] %>
+              <br>
+              <%= f.input :experience, :collection => ['Beginner', 'Medium Level', 'Senior Level', 'Expert']%>
+              <br>
+              <%= f.input :interview_language, :collection => ['German', 'Spanish', 'French', 'English'] %>
+              <br>
+              <div class="buttons-form d-flex justify-content-between">
+                <%= link_to "← Go back", :back, class: "btn btn-secondary" %>
+                <%= f.button :submit, "→ Submit", class: "btn btn-primary" %>
+              </div>
+              <br>
+            <% end %>
           </div>
-        </div>
+        </div>  
       </div>
+    </div>
+  </div>
 </div>
