@@ -13,13 +13,13 @@
       <!-- Video chat -->
 
         <div id="twilio-token" data-twilio-token="<%= JSON.generate(@token) %>"></div>
-        <div>
-          <a href="#" class="video-call-button">Call</a>
-        </div>
         <div id="remote-video" class="video-styling waiting">
           <h1>Waiting for <%= @other_user.nickname %> to join...</h1>
-          <div id="local-video">
-            <div class="round-hang-up video-button"></div>
+          <div>
+            <a href="#" class="video-call-button">Call</a>
+          </div>
+          <div><a href="#" class="round-hang-up video-button">Disconnect</a></div>
+          <div id="local-video" class="waiting">
             <div></div>
           </div>
         </div>
