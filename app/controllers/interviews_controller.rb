@@ -16,6 +16,7 @@ class InterviewsController < ApplicationController
     find_interview
     # authorize @interview
     @user = current_user
+    @message = Message.new
   end
 
   def new

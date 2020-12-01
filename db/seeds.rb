@@ -3,6 +3,7 @@ require 'open-uri'
 
 puts "clearing data"
 
+Message.destroy_all
 Booking.destroy_all
 Interview.destroy_all
 User.destroy_all
@@ -31,7 +32,6 @@ interview9 = Interview.create!(date: Date.parse("30.11.2020"), start_time: Time.
 interview10 = Interview.create!(date: Date.parse("30.11.2020"), start_time: Time.new(2020,12,10,17), end_time: Time.new(2020,12,10,19), focus: "Ruby", experience: "Beginner", interview_language: "English", user: peter)
 interview11 = Interview.create!(date: Date.parse("30.11.2020"), start_time: Time.new(2020,12,12,17), end_time: Time.new(2020,12,12,19), focus: "Ruby", experience: "Medium Level", interview_language: "English", user: lisa)
 interview12 = Interview.create!(date: Date.parse("30.11.2020"), start_time: Time.new(2020,12,12,18), end_time: Time.new(2020,12,12,19), focus: "Ruby", experience: "Senior Level", interview_language: "Spanish", user: bruce)
-
 
 puts "generating Bookings"
 
