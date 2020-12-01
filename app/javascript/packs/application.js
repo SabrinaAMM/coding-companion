@@ -39,3 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   initInterviewCable();
 });
 
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
