@@ -12,48 +12,43 @@
         <%= f.input :interview_language, :collection => ['English', 'German', 'French', 'Spanish'], input_html: { class: "mr-sm-2" }, prompt: "Language" %>
         <%= f.input :experience, :collection => ['Beginner', 'Medium Level', 'Senior Level', 'Expert'], input_html: { class: " mr-sm-2" }, prompt: "Experience" %>
         <%= text_field_tag :query, params[:query], class: "col-2 mr-sm-2 form-control", placeholder: "Search for Nickname..." %>
-        <%= f.button :submit, "Search", class: "btn btn-success col-2" %>
+        <%= f.submit "Search", class: "btn btn-success col-2" %>
       <% end %>
-      </div>
+    </div>
   </div>
   <br>
 
   <h3 class="mt-5">Today</h3>
-
-    <div class="row justify-content-start">
-      <% @interviews.each do |interview| %>
-        <% if interview.start_time.strftime("%H %M %S") >= DateTime.now.strftime("%H %M %S") && interview.date >= Date.today %>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <%= render partial: 'shared/card-index', locals: { interview: interview } %>
-          </div>
-        <% end %>
+  <div class="row justify-content-start">
+    <% @interviews.each do |interview| %>
+      <% if interview.start_time.strftime("%H %M %S") >= DateTime.now.strftime("%H %M %S") && interview.date >= Date.today %>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <%= render partial: 'shared/card-index', locals: { interview: interview } %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
+  </div>
 
   <h3 class="mt-5">Tomorrow</h3>
-    <div class="row justify-content-start">
-      <% @interviews.each do |interview| %>
+  <div class="row justify-content-start">
+    <% @interviews.each do |interview| %>
 
-        <% if interview.date == Date.tomorrow %>
-          <div class="col-3">
-            <%= render partial: 'shared/card-index', locals: { interview: interview } %>
-          </div>
-        <% end %>
+      <% if interview.date == Date.tomorrow %>
+        <div class="col-3">
+          <%= render partial: 'shared/card-index', locals: { interview: interview } %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
+  </div>
 
   <h3 class="mt-5">In the Future</h3>
-    <div class="row justify-content-start">
-      <% @interviews.each do |interview| %>
-        <% if interview.date > Date.tomorrow %>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <%= render partial: 'shared/card-index', locals: { interview: interview } %>
-          </div>
-        <% end %>
+  <div class="row justify-content-start">
+    <% @interviews.each do |interview| %>
+      <% if interview.date > Date.tomorrow %>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <%= render partial: 'shared/card-index', locals: { interview: interview } %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>
-
-<!-- <div class="card bg-white rounded shadow-sm col-12 col-sm-6 col-md-4 col-lg-3 m-4" style="width: 18rem; height: 14rem"> -->
-
-
