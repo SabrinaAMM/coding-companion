@@ -13,8 +13,8 @@
         <%= f.input :experience, :collection => ['Beginner', 'Medium Level', 'Senior Level', 'Expert'], input_html: { class: " mr-sm-2" }, prompt: "Experience" %>
         <%= text_field_tag :query, params[:query], class: "col-2 mr-sm-2 form-control", placeholder: "Search for Nickname..." %>
         <%= f.button :submit, "Search", class: "btn btn-success col-2" %>
-      </div>
       <% end %>
+      </div>
   </div>
   <br>
 
