@@ -32,16 +32,10 @@
   transition: transform 300ms;
 }
 
-
 .logo .logo_text {
   transition: transform 300ms;
 }
 
 .logo:hover img, .logo:hover .logo_text {
   transform: translateY(-40px);
-}
-
-.header {
-  margin-top: 100px;
-  margin-bottom: 130px;
 }

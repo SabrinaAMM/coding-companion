@@ -12,7 +12,9 @@
   </head>
 
   <body>
-    <% unless controller_name == "pages"%>
+    <% if controller_name == "pages"%>
+      <%= render 'shared/navbar-home' %>
+    <% else %>
       <%= render 'shared/navbar' %>
     <% end %>
 

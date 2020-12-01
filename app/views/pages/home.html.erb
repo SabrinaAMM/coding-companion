@@ -1,5 +1,4 @@
-<div class="#" style="background-color: #f7f8f7">
-
+<div class="bg-white">
   <div class="home-banner position-relative" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9), #0000), url(<%= cl_image_path 'image_r3re4y.png'%>)">
     <div class="container text-white my-5">
 
@@ -16,50 +15,42 @@
         <%= link_to "→ See available interviews", interviews_path, class: "btn btn-primary" %>
       </div>
     </div>
-
-
-    <% if user_signed_in? %>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-signed-in shadow-sm"  %>
-    <% else %>
-      <%= link_to "→ Login", new_user_session_path, class: "position-absolute btn btn-secondary shadow-sm", style: "top:50px; right:210px; color:white;" %>
-      <%= link_to "+ Sign up", new_user_registration_path, class: "position-absolute btn btn-secondary shadow-sm", style: "top:50px; right:100px; color:white;" %>
-    <% end %>
   </div>
 
+  <div class="container d-flex justify-content-center flex-column" style="height: 100vh;">
+    <h1 class="mb-5 text-center">HOW IT WORKS</h1>
 
-  <div class="container">
-    <h1 class="header d-flex justify-content-center">How it works</h1>
-    <div class="cards">
+    <div class="cards mt-5">
 
-        <div class="card-landing" style="width: 18rem;">
-        <img class="card-img-top" src="http://res.cloudinary.com/yowyowyow/image/upload/v1606753783/Icon-Termin_ikvws6.png" alt="Icon-booking" style="height: 150px;">
-        <div class="card-body">
-          <h5 class="card-title">1. Book a session</h5>
-          <p class="card-text">Browse available interview sessions created by other users. Book a session or create a new one</p>
+      <div style="width: 18rem; margin: auto; text-align: center;">
+        <img src="http://res.cloudinary.com/yowyowyow/image/upload/v1606753783/Icon-Termin_ikvws6.png" alt="Icon-booking" style="height: 120px;">
+        <div class="text-center mt-5">
+          <h5>1. Book a session</h5>
+          <p>Browse available interview sessions created by other users. Book a session or create a new one.</p>
         </div>
       </div>
 
-      <div class="card-landing" style="width: 18rem;">
-        <img class="card-img-top" src="http://res.cloudinary.com/yowyowyow/image/upload/v1606753923/Icon-Webcam_wbtyqv.png" alt="Icon-booking" style="height: 150px;">
-        <div class="card-body">
-          <h5 class="card-title">2. Conduct the interview</h5>
-          <p class="card-text">Meet your coding companion via video chat. You and your companion interview each other in turns</p>
+      <div style="width: 18rem; margin: auto; text-align: center;">
+        <img src="http://res.cloudinary.com/yowyowyow/image/upload/v1606753923/Icon-Webcam_wbtyqv.png" alt="Icon-booking" style="height: 120px;">
+        <div class="text-center mt-5">
+          <h5>2. Conduct the interview</h5>
+          <p>Meet your coding companion via video chat. You and your companion interview each other in turns.</p>
         </div>
       </div>
 
-      <div class="card-landing" style="width: 18rem;">
-        <img class="card-img-top" src="http://res.cloudinary.com/yowyowyow/image/upload/v1606753867/Icon-Thumbs_wsmqgs.png" alt="Icon-booking" style="height: 150px;">
-        <div class="card-body">
-          <h5 class="card-title">3. Land your dream job</h5>
-          <p class="card-text">Conduct as many mock interviews as you like and be optimally prepared for your upcoming interviews</p>
+      <div style="width: 18rem; margin: auto; text-align: center;">
+        <img src="http://res.cloudinary.com/yowyowyow/image/upload/v1606753867/Icon-Thumbs_wsmqgs.png" alt="Icon-booking" style="height: 120px;">
+        <div class="text-center mt-5">
+          <h5>3. Land your dream job</h5>
+          <p>Conduct as many mock interviews as you like and be optimally prepared for your upcoming interviews.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="#" style="background-color: #f1ece1">
-  <div class="container">
-    <h1 class="header d-flex justify-content-center">Join An Upcoming Interview</h1>
+<div>
+  <div class="container d-flex justify-content-center flex-column" style="height: 100vh;">
+    <h1 class="mb-5 text-center">JOIN AN UPCOMING INTERVIEW</h1>
   </div>
 </div>
