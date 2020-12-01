@@ -10,28 +10,31 @@
         <thead class="text-center">
           <tr>
             <th scope="col" style="border-top: 3px solid #f1ece1"></th>
-            <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Creator</th>
-            <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Participant</th>
-            <th scope="col" style="width:15%; border-top: 3px solid #f1ece1">Date</th>
-            <th scope="col" style="width:15%; border-top: 3px solid #f1ece1">Programming Languages</th>
-            <th scope="col" style="width:15%; border-top: 3px solid #f1ece1">Experience</th>
-            <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Interview Language</th>
-            <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Status</th>
-            <th scope="col" style="width:12%; border-top: 3px solid #f1ece1"></th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Creator</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Participant</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Date</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Programming Languages</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Experience</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Interview Language</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Status</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1"></th>
+            <th scope="col" style="border-top: 3px solid #f1ece1"></th>
           </tr>
         </thead>
         <tbody>
           <% @upcoming_interviews.each do |interview| %>
             <tr>
               <th scope="row" style="border-top: 3px solid #f1ece1"></th>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1" data-toggle="tooltip" title=<%=interview.user.nickname%>><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></td>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1" data-toggle="tooltip" title=<%=interview.bookings.first.user.nickname%>><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></td>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.date.strftime("%a %e.%m.%y") %> | <%= interview.start_time.strftime("%H:%M") %> - <%= interview.end_time.strftime("%H:%M") %></div></td>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.interview_language %></div></td>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-success py-2 px-3 text-light">Confirmed</div></td>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><%= link_to "→ Interview", interview_path(interview), class: "d-block badge badge-primary py-2 px-3" %></td>
+
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"  data-toggle="tooltip" title=<%=interview.user.nickname%>><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" data-toggle="tooltip" title=<%=interview.bookings.first.user.nickname%>><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.date.strftime("%a %e.%m.%y") %> | <%= interview.start_time.strftime("%H:%M") %> - <%= interview.end_time.strftime("%H:%M") %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:7%"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:9%"><div class="d-block badge badge-light py-2 px-3"><%= interview.interview_language %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"><div class="d-block badge badge-success py-2 px-3 text-light">Confirmed</div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"><%= link_to "→ Interview", interview_path(interview), class: "d-block badge badge-primary py-2 px-3" %></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><%= link_to "✘", interview_path(interview), class: "d-block badge badge-danger py-2 px-3", method: :delete, data: { confirm: "Are you sure?"} %></td>
             </tr>
           <% end %>
         </tbody>
@@ -49,32 +52,34 @@
         <thead class="text-center">
           <tr>
             <th scope="col" style="border-top: 3px solid #f1ece1"></th>
-            <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Creator</th>
-            <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Participant</th>
-            <th scope="col" style="width:15%; border-top: 3px solid #f1ece1">Date</th>
-            <th scope="col" style="width:15%; border-top: 3px solid #f1ece1">Programming Languages</th>
-            <th scope="col" style="width:15%; border-top: 3px solid #f1ece1">Experience</th>
-            <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Interview Language</th>
-            <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Status</th>
-            <th scope="col" style="width:15%; border-top: 3px solid #f1ece1"></th>
+            <th scope="col" style=" border-top: 3px solid #f1ece1">Creator</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Participant</th>
+            <th scope="col" style=" border-top: 3px solid #f1ece1">Date</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Programming Languages</th>
+            <th scope="col" style=" border-top: 3px solid #f1ece1">Experience</th>
+            <th scope="col" style=" border-top: 3px solid #f1ece1">Interview Language</th>
+            <th scope="col" style="border-top: 3px solid #f1ece1">Status</th>
+            <th scope="col" style=" border-top: 3px solid #f1ece1"></th>
+            <th scope="col" style=" border-top: 3px solid #f1ece1"></th>
           </tr>
         </thead>
         <tbody>
           <% @pending_interviews.each do |interview| %>
             <tr>
               <th scope="row" style="border-top: 3px solid #f1ece1"></th>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" data-toggle="tooltip" title=<%=interview.user.nickname%>><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></td>
+              <td class="text-center align-middle py-2 px-3" style="border-top: 3px solid #f1ece1"  data-toggle="tooltip" title=<%=interview.user.nickname%>><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></div></td>
               <% if interview.bookings.present? %>
-                <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" data-toggle="tooltip" title=<%=interview.bookings.first.user.nickname%>><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></td>
+                <td class="text-center align-middle py-2 px-3" style="border-top: 3px solid #f1ece1"  data-toggle="tooltip" title=<%=interview.bookings.first.user.nickname%>><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></div></td>
               <% else  %>
                 <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block badge badge-light py-2 px-3"> None</div></td>
               <% end %>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.date.strftime("%a %e.%m.%y") %> | <%= interview.start_time.strftime("%H:%M") %> - <%= interview.end_time.strftime("%H:%M") %></div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.interview_language %></div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-warning py-2 px-3">Pending </div></td>
-             <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:7%"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:9%"><div class="d-block badge badge-light py-2 px-3"><%= interview.interview_language %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"><div class="d-block badge badge-warning py-2 px-3" >Pending </div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><%= link_to "✘", interview_path(interview), class: "d-block badge badge-danger py-2 px-3", method: :delete, data: { confirm: "Are you sure?"} %></td>
            </tr>
           <% end %>
         </tbody>
@@ -92,14 +97,16 @@
       <thead class="text-center">
         <tr >
           <th scope="col" style="border-top: 3px solid #f1ece1"></th>
-          <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Creator</th>
-          <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Participant</th>
-          <th scope="col" style="width:15%; border-top: 3px solid #f1ece1">Date</th>
-          <th scope="col" style="width:15%; border-top: 3px solid #f1ece1">Programming Languages</th>
-          <th scope="col" style="width:15%; border-top: 3px solid #f1ece1">Experience</th>
-          <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Interview Language</th>
-          <th scope="col" style="width:10%; border-top: 3px solid #f1ece1">Status</th>
-          <th scope="col" style="width:15%; border-top: 3px solid #f1ece1"></th>
+          <th scope="col" style="border-top: 3px solid #f1ece1">Creator</th>
+          <th scope="col" style="border-top: 3px solid #f1ece1">Participant</th>
+          <th scope="col" style="border-top: 3px solid #f1ece1">Date</th>
+          <th scope="col" style="border-top: 3px solid #f1ece1">Programming Languages</th>
+          <th scope="col" style="border-top: 3px solid #f1ece1">Experience</th>
+          <th scope="col" style="border-top: 3px solid #f1ece1">Interview Language</th>
+          <th scope="col" style="border-top: 3px solid #f1ece1">Status</th>
+          <th scope="col" style="border-top: 3px solid #f1ece1"></th>
+          <th scope="col" style="border-top: 3px solid #f1ece1"></th>
+        </tr>
         </tr>
         </thead>
         <tbody>
@@ -113,11 +120,13 @@
                  <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block badge badge-light py-2 px-3"> None</div></td>
               <% end %>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.date.strftime("%a %e.%m.%y") %> | <%= interview.start_time.strftime("%H:%M") %> - <%= interview.end_time.strftime("%H:%M") %></div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.interview_language %></div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-secondary py-2 px-3 text-light">Over</div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:7%"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:9%"><div class="d-block badge badge-light py-2 px-3"><%= interview.interview_language %></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"><div class="d-block badge badge-secondary py-2 px-3 text-light">Over</div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><%= link_to "✘", interview_path(interview), class: "d-block badge badge-danger py-2 px-3", method: :delete, data: { confirm: "Are you sure?"} %></td>
+            </tr>
             </tr>
           <% end %>
         </tbody>
@@ -126,3 +135,4 @@
   </div>
 </div>
 
+9
