@@ -1,0 +1,33 @@
+
+<div class="container mt-5" >
+  <div class="d-flex justify-content-between">
+    <div>
+      <img class="rounded-circle" src= 'https://kitt.lewagon.com/placeholder/users/ssaunier' >
+    </div>
+
+    <div>
+      <div class="card bg-white rounded shadow-sm p-3 mr-5">
+        <h3>Hi, I'm <%= @user.nickname  %></h3>
+        <p></p>
+        <p> Member since: May 2020 </p>
+        <p> Number of Interviews: 4 </p>
+        <p> Speaks: English and Spanish </p>
+      </div>
+
+      <div class="card bg-white rounded shadow-sm p-3 my-3 mr-5">
+        <h3>Bio</h3>
+        <p><%= @user.bio %></p>
+      </div>
+
+      <div class="card bg-white rounded shadow-sm p-3 my-3 mr-5">
+        <h3>Programming Language and Experience</h3>
+        <div>
+          <h2 class="badge badge-danger mx-2 p-2 text-danger text-center" style="display:inline-block; width:45px; background-color: rgba(253, 16, 21, 0.3)">Ruby </h2> Beginner
+        </div>
+        <div>
+          <h2 class="badge badge-warning mx-2 p-2 text-warning text-center" style="display:inline-block; width:45px; background-color: rgba(230, 126, 34, 0.3)">CSS</h2> Intermediate </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
