@@ -7,22 +7,21 @@
       </div>
     </div>
 
-    <div class="col-7 p-0 text-center">
+    <div class="col-7 p-0">
       <div class="d-flex align-items-center justify-content-center bg-dark" style="height: calc(100vh - 56px - 250px);">
 
       <!-- Video chat -->
-
-        <div id="twilio-token" data-twilio-token="<%= JSON.generate(@token) %>"></div>
-        <div id="remote-video" class="video-styling waiting">
-          <h1>Waiting for <%= @other_user.nickname %> to join...</h1>
-          <div>
-            <a href="#" class="video-call-button">Call</a>
-          </div>
-          <div><a href="#" class="round-hang-up video-button">Disconnect</a></div>
-          <div id="local-video" class="waiting">
-            <div></div>
-          </div>
+      <div id="twilio-token" data-twilio-token="<%= JSON.generate(@token) %>"></div>
+      <div id="remote-video" class="video-styling waiting">
+        <h1>Waiting for <%= @other_user.nickname %> to join...</h1>
+        <div>
+          <a href="#" class="video-call-button">Call</a>
         </div>
+        <div><a href="#" class="round-hang-up video-button">Disconnect</a></div>
+        <div id="local-video" class="waiting">
+          <div></div>
+        </div>
+      </div>
 
       </div>
 

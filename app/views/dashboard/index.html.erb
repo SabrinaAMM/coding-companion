@@ -25,8 +25,9 @@
           <% @upcoming_interviews.each do |interview| %>
             <tr>
               <th scope="row" style="border-top: 3px solid #f1ece1"></th>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></div></td>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></div></td>
+
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"  data-toggle="tooltip" title=<%=interview.user.nickname%>><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></div></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" data-toggle="tooltip" title=<%=interview.bookings.first.user.nickname%>><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></div></td>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.date.strftime("%a %e.%m.%y") %> | <%= interview.start_time.strftime("%H:%M") %> - <%= interview.end_time.strftime("%H:%M") %></div></td>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:7%"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1; width:12%"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
@@ -66,9 +67,9 @@
           <% @pending_interviews.each do |interview| %>
             <tr>
               <th scope="row" style="border-top: 3px solid #f1ece1"></th>
-              <td class="text-center align-middle py-2 px-3" style="border-top: 3px solid #f1ece1"><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></div></td>
+              <td class="text-center align-middle py-2 px-3" style="border-top: 3px solid #f1ece1"  data-toggle="tooltip" title=<%=interview.user.nickname%>><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></div></td>
               <% if interview.bookings.present? %>
-                <td class="text-center align-middle py-2 px-3" style="border-top: 3px solid #f1ece1"><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></div></td>
+                <td class="text-center align-middle py-2 px-3" style="border-top: 3px solid #f1ece1"  data-toggle="tooltip" title=<%=interview.bookings.first.user.nickname%>><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></div></td>
               <% else  %>
                 <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block badge badge-light py-2 px-3"> None</div></td>
               <% end %>
@@ -112,9 +113,9 @@
           <% @past_interviews.each do |interview| %>
             <tr>
               <th scope="row" style="border-top: 3px solid #f1ece1"></th>
-               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></div> </td>
+               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" data-toggle="tooltip" title=<%=interview.user.nickname%>><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></div> </td>
               <% if interview.bookings.present? %>
-                <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></div> </td>
+                <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" data-toggle="tooltip" title=<%=interview.bookings.first.user.nickname%> ><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></div> </td>
               <% else  %>
                  <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block badge badge-light py-2 px-3"> None</div></td>
               <% end %>
