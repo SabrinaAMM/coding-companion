@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import { initFlatpickr} from '../plugins/init_flatpickr';
 import { setUpTwilio } from "../plugins/twilio";
+import { initInterviewCable } from '../channels/interview_channel';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,5 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initFlatpickr();
   setUpTwilio();
+  initInterviewCable();
 });
 

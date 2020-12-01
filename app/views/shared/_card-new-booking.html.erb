@@ -29,7 +29,7 @@
       <h4 class= "text-center text-secondary mt-1 mb-2 mr-2"><i class="far fa-clock"></i></h4>
     </div>
     <div class="flex-fill ml-2 p-2 mb-2 text-muted rounded" style="background-color: rgba(155, 164, 180, 0.3);">
-      <h6 class="font-weight-light mb-0"><%= interview.start_time.strftime("%a %e.%m.%y | %H:%M") %> - <%= interview.end_time.strftime("%H:%M") %></h6>
+      <h6 class="font-weight-light mb-0"><%= interview.date.strftime("%a %e.%m.%y") %> | <%= interview.start_time.strftime("%H:%M") %> - <%= interview.end_time.strftime("%H:%M") %></h6>
     </div>
   </div>
 

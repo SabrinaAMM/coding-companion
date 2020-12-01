@@ -25,11 +25,26 @@
           <div></div>
         </div>
       </div>
-  
-      <div class="d-flex align-items-center justify-content-center bg-secondary" style="height: calc(150px)">
-        <h2>Chat</h2>
+
+      <div class="d-flex flex-column justify-content-center bg-white p-3" style="height: calc(250px)">
+
+        <!-- Chat messages: -->
+        <div id="messages" data-interview-id="<%= @interview.id %>" style="overflow-y: auto">
+          <% @interview.messages.each do |message| %>
+            <%= render 'messages/message', message: message %>
+          <% end %>
+        </div>
+
+        <!-- Chat input: -->
+        <%= simple_form_for [ @interview, @message ], remote: true do |f| %>
+          <div class="d-flex chat-input mt-2" style="height: 60px;">
+            <%= f.input_field :content, label: false, placeholder: "Send a message to your companion ...", class: "flex-grow-1 chat-message rounded p-2" %>
+            <button name="button" type="submit" class="chat-button">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        <% end %>
       </div>
     </div>
-
   </div>
 </div>
