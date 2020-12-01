@@ -30,7 +30,7 @@ class InterviewsController < ApplicationController
     @interview = Interview.new(interview_params)
     # authorize @interview
     @interview.user = current_user
-    if @interview.save!
+    if @interview.save
       redirect_to dashboard_index_path
     else
       render :new
