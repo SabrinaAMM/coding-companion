@@ -3,12 +3,19 @@
 
     <!-- Coding language -->
     <div>
-      <p class="m-0 py-1 px-2 text-white rounded" style="background-color: #D63333; font-size: 12px; font-weight: bold;">Ruby</p>
+      <% if interview.focus == "Ruby" %>
+        <p class="m-0 py-1 px-2 text-white rounded" style="background-color: #D63333; font-size: 12px; font-weight: bold;">Ruby</p>
+      <% elsif interview.focus == "Javascript" %>
+        <p class="m-0 py-1 px-2 text-white rounded" style="background-color: #E4BA42; font-size: 12px; font-weight: bold;">Javascript</p>
+      <% elsif interview.focus == "HTML/CSS" %>
+        <p class="m-0 py-1 px-2 text-white rounded" style="background-color: #0070BA; font-size: 12px; font-weight: bold;">HTML/CSS</p>
+      <% end %>
     </div>
 
-    <!-- Avatar -->
-    <div>
-      <%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar shadow-sm", style: "height: 27px; width: 27px;"), user_path(interview.user)%>
+    <!-- Nickname and Avatar -->
+    <div class="d-flex align-items-center">
+      <p class="my-0" style="font-size: 12px; font-weight: bold;"><%= interview.user.nickname %></p>
+      <%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar shadow-sm ml-2", style: "height: 27px; width: 27px;"), user_path(interview.user)%>
     </div>
   </div>
 
@@ -62,7 +69,7 @@
 
   <!-- Confirm button -->
   <div class="px-2 pb-2">
-    <%= link_to "→ Confirm booking", new_interview_booking_path(interview.id), class: "btn btn-primary w-100", style: "font-size: 12px;" %>
+    <%= link_to "→ Book interview", new_interview_booking_path(interview.id), class: "btn btn-primary w-100", style: "font-size: 12px;" %>
   </div>
 
 </div>
