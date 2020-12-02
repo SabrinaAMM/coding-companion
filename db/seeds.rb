@@ -36,7 +36,7 @@ mario.photo.attach(io: File.open(Rails.root.join('app','assets','images','mario.
 
 nico = User.create!(email: "nico@example.com", password: "123456", nickname: "nicolaspck", bio: "I just finished school this year and decided to learn coding because I think that it will always be useful. Coding is now my passion and I am looking forward to prepare myself for my first
 job interview with like-minded companions on this platform.")
-nico.photo.attach(io: File.open(Rails.root.join('app','assets','images','nico.jpg')), filename: 'nico.jpg', content_type: 'image/jpg')
+nico.photo.attach(io: File.open(Rails.root.join('app','assets','images','nico.jpeg')), filename: 'nico.jpeg', content_type: 'image/jpeg')
 
 
 
