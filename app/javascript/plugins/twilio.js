@@ -82,7 +82,7 @@ const setVideoVisible = (visible) => {
   const element = document.getElementById("remote-video")
   if (visible) {
     // show it
-    element.style.display = "flex"
+    element.style.display = "block"
   } else {
     // hide it
     element.style.display = "none"
