@@ -52,6 +52,13 @@
 <div style="background-color: #f1ece1;">
   <div class="container d-flex justify-content-center flex-column" style="height: 710px;">
     <h1 class="mb-5 text-center">JOIN AN UPCOMING INTERVIEW</h1>
+    <div class="row justify-content-start">
+      <% @interviews.each do |interview| %>
+        <div class="col-3 my-3">
+          <%= render partial: 'shared/card-index', locals: { interview: interview } %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <%= render partial: 'shared/footer' %>
