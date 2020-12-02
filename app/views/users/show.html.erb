@@ -1,8 +1,19 @@
 
 <div class="container mt-5" >
   <div class="d-flex justify-content-between">
-    <div>
-      <img class="rounded-circle" src= 'https://kitt.lewagon.com/placeholder/users/ssaunier' >
+    <div class="#">
+      <div>
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill , class: "rounded-circle m-10"%>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg",height: 200, width: 200, crop: :fill, class: "rounded-circle" %>
+        <% end %>
+      </div>
+
+
+      <% if @user == current_user %>
+        <%= link_to "Edit Profil", edit_user_registration_path, class: "btn btn-primary m-10 p-3" %>
+      <% end %>
     </div>
 
     <div>
