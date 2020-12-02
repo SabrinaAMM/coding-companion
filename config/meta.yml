@@ -1,0 +1,5 @@
+meta_product_name: "Coding Companion"
+meta_title: "Coding Companion | Practice coding interviews"
+meta_description: "Practice coding interviews online. Coding Companion connects you with like-minded companions to prepare you for your job interviews."
+meta_image: "https://res.cloudinary.com/yowyowyow/image/upload/v1606925475/AdobeStock_278561294_FB_qswjz6.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
