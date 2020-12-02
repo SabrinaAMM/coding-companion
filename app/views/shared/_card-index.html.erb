@@ -15,7 +15,11 @@
     <!-- Nickname and Avatar -->
     <div class="d-flex align-items-center">
       <p class="my-0" style="font-size: 12px; font-weight: bold;"><%= interview.user.nickname %></p>
-      <%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar shadow-sm ml-2", style: "height: 27px; width: 27px;"), user_path(interview.user)%>
+      <% if interview.user.photo.attached? %>
+        <%= link_to (cl_image_tag interview.user.photo.key), user_path(interview.user), class: "avatar-style ml-2"%>
+      <% else %>
+        <%= link_to cl_image_tag("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(interview.user), class: "ml-2 avatar-style"%>
+      <% end %>
     </div>
   </div>
 
