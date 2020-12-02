@@ -1,7 +1,84 @@
-<div class="form d-flex align-items-center" style="height: calc(100vh - 56px);">
-  <div class="form-text font-weight-bold">
+<div class="form d-flex align-items-center" style="height: calc(100vh - 56px); background-color: #f1ece1;">
+
+  <div class="font-weight-bold">
     <h2>Confirm your interview <br> with <%= @interview.user.nickname %>!</h2>
     <p class="text-muted">Then you are all set for some interview practice 🚀</p>
   </div>
-  <%= render partial: 'shared/card-new-booking', locals: { interview: @interview } %>
+
+  <div class="bg-white rounded shadow-sm position-relative" style="width: 650px; border: 1px solid rgba(155,164,180,0.4)">
+    <div class="d-flex justify-content-between align-items-center position-absolute w-100 px-2" style="height: 40px; border-radius: 3px 3px 0px 0px; background-color: rgba(155,164,180,0.4)">
+
+      <!-- Coding language -->
+      <div>
+        <% if @interview.focus == "Ruby" %>
+          <p class="m-0 py-1 px-2 text-white rounded" style="background-color: #D63333; font-size: 12px; font-weight: bold;">Ruby</p>
+        <% elsif @interview.focus == "Javascript" %>
+          <p class="m-0 py-1 px-2 text-white rounded" style="background-color: #E4BA42; font-size: 12px; font-weight: bold;">Javascript</p>
+        <% elsif @interview.focus == "HTML/CSS" %>
+          <p class="m-0 py-1 px-2 text-white rounded" style="background-color: #0070BA; font-size: 12px; font-weight: bold;">HTML/CSS</p>
+        <% end %>
+      </div>
+
+      <!-- Nickname and Avatar -->
+      <div class="d-flex align-items-center">
+        <p class="my-0" style="font-size: 12px; font-weight: bold;"><%= @interview.user.nickname %></p>
+        <%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar shadow-sm ml-2", style: "height: 27px; width: 27px;"), user_path(@interview.user)%>
+      </div>
+    </div>
+
+    <!-- Placeholder div to reflect height of overlay and shift down elements -->
+    <div style="height: 40px"></div>
+
+    <!-- Info elements -->
+    <div class="row m-0">
+
+    <!-- Date -->
+      <div class="col-6 p-0">
+        <div class="m-2 d-flex align-items-center">
+          <div class="mr-2" style="width: 20px; height: 21px;">
+            <h5 class="text-secondary my-0"><i class="far fa-calendar-alt"></i></h5>
+          </div>
+          <p class="my-0" style="font-size: 12px; font-weight: bold;"><%= @interview.date.strftime("%a %e.%m.%y") %></p>
+        </div>
+      </div>
+
+    <!-- Time -->
+      <div class="col-6 p-0">
+        <div class="m-2 d-flex align-items-center">
+          <div class="mr-2" style="width: 20px; height: 21px;">
+            <h5 class="text-secondary my-0"><i class="far fa-clock"></i></h5>
+          </div>
+          <p class="my-0" style="font-size: 12px; font-weight: bold;"><%= @interview.start_time.strftime("%H:%M") %> - <%= @interview.end_time.strftime("%H:%M") %></p>
+        </div>
+      </div>
+
+    <!-- Interview difficulty -->
+      <div class="col-6 p-0">
+        <div class="m-2 d-flex align-items-center">
+          <div class="mr-2" style="width: 20px; height: 21px;">
+            <h6 class="text-secondary my-0"><i class="fas fa-dumbbell"></i></h6>
+          </div>
+          <p class="my-0" style="font-size: 12px; font-weight: bold;"><%= @interview.experience %></p>
+        </div>
+      </div>
+
+    <!-- Interview language -->
+      <div class="col-6 p-0">
+        <div class="m-2 d-flex align-items-center">
+          <div class="mr-2" style="width: 20px;">
+            <h5 class="text-secondary my-0"><i class="far fa-comment-dots"></i></h5>
+          </div>
+          <p class="my-0" style="font-size: 12px; font-weight: bold;"><%= @interview.interview_language %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Confirm button -->
+    <div class="px-2 pb-2">
+      <%= link_to "→ Book interview", new_interview_booking_path(@interview.id), class: "btn btn-primary w-100", style: "font-size: 12px;" %>
+    </div>
+
+  </div>
+
 </div>
