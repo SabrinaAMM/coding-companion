@@ -43,3 +43,4 @@ document.addEventListener('turbolinks:load', () => {
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
+
