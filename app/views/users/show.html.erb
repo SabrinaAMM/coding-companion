@@ -6,7 +6,7 @@
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill , class: "rounded-circle m-10"%>
         <% else %>
-          <%= image_tag "https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg",height: 300, width: 300, crop: :fill, class: "rounded-circle" %>
+          <%= image_tag "https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg",height: 200, width: 200, crop: :fill, class: "rounded-circle" %>
         <% end %>
       </div>
 
