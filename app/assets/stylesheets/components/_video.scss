@@ -16,7 +16,7 @@
     display: none;
   }
   #local-video {
-    display: block;
+    display: inline-block;
   }
 }
 #remote-video.waiting {
@@ -34,6 +34,7 @@
 }
 #remote-video video {
   // max-width: 50px !important;
+  width: 100%;
 }
 #local-video {
   // position: absolute;
@@ -47,3 +48,5 @@
 .video-button {
   // cursor: pointer;
 }
+
+
