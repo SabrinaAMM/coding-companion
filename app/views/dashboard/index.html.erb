@@ -24,8 +24,21 @@
           <% @upcoming_interviews.each do |interview| %>
             <tr>
               <th scope="row" style="border-top: 3px solid #f1ece1"></th>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></td>
-              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></td>
+              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1;">
+                <% if @user.photo.attached? %>
+                  <%= link_to (cl_image_tag @user.photo.key), user_path(interview.user), class: "dashboard-profile-link"%>
+                <% else %>
+                  <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                <% end %>
+                </td>
+              <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1">
+                <% other_user = interview.bookings.where(interview_id: interview.id).first.user %>
+                <% if other_user.photo.attached? %>
+                  <%= link_to (cl_image_tag other_user.photo.key), user_path(other_user), class: "dashboard-profile-link"%>
+                <% else %>
+                  <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                <% end %>
+              </td>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.date.strftime("%a %e.%m.%y") %> | <%= interview.start_time.strftime("%H:%M") %> - <%= interview.end_time.strftime("%H:%M") %></div></td>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.focus %></div></td>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.experience %></div></td>
@@ -63,9 +76,22 @@
           <% @pending_interviews.each do |interview| %>
             <tr>
               <th scope="row" style="border-top: 3px solid #f1ece1"></th>
-              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></td>
+              <td class="text-center align-middle" style="border-top: 3px solid #f1ece1">
+                <% if @user.photo.attached? %>
+                  <%= link_to (cl_image_tag @user.photo.key), user_path(interview.user), class: "dashboard-profile-link"%>
+                <% else %>
+                  <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                <% end %>
+              </td>
               <% if interview.bookings.present? %>
-                <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></td>
+                <td class="text-center align-middle" style="border-top: 3px solid #f1ece1">
+                    <% other_user = interview.bookings.where(interview_id: interview.id).first.user %>
+                  <% if other_user.photo.attached? %>
+                    <%= link_to (cl_image_tag other_user.photo.key), user_path(other_user), class: "dashboard-profile-link"%>
+                  <% else %>
+                    <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                  <% end %>
+                </td>
               <% else  %>
                 <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block badge badge-light py-2 px-3"> None</div></td>
               <% end %>
@@ -106,9 +132,22 @@
           <% @past_interviews.each do |interview| %>
             <tr>
               <th scope="row" style="border-top: 3px solid #f1ece1"></th>
-               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1"><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.user)%></div> </td>
+               <td class="text-center align-middle" style="border-top: 3px solid #f1ece1">
+                <% if @user.photo.attached? %>
+                  <%= link_to (cl_image_tag @user.photo.key), user_path(interview.user), class: "dashboard-profile-link"%>
+                <% else %>
+                  <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                <% end %>
+              </td>
               <% if interview.bookings.present? %>
-                <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block py-2 px-3"><%= link_to image_tag('https://kitt.lewagon.com/placeholder/users/ssaunier', class: "avatar", style: "height: 20px; width: 20px"), user_path(interview.bookings.first.user)%></div> </td>
+                <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" >
+                    <% other_user = interview.bookings.where(interview_id: interview.id).first.user %>
+                  <% if other_user.photo.attached? %>
+                    <%= link_to (cl_image_tag other_user.photo.key), user_path(other_user), class: "dashboard-profile-link"%>
+                  <% else %>
+                    <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                  <% end %>
+                </td>
               <% else  %>
                  <td class="text-center align-middle" style="border-top: 3px solid #f1ece1" ><div class="d-block badge badge-light py-2 px-3"> None</div></td>
               <% end %>
