@@ -29,7 +29,7 @@
                 <% if interview.user.photo.attached? %>
                   <%= link_to (cl_image_tag interview.user.photo.key), user_path(interview.user), class: "dashboard-profile-link"%>
                 <% else %>
-                  <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                  <%= link_to cl_image_tag("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(interview.user), class: "dashboard-profile-link" %>
                 <% end %>
                 </td>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1" data-toggle="tooltip" title=<%=interview.bookings.first.user.nickname%>>
@@ -37,7 +37,7 @@
                 <% if other_user.photo.attached? %>
                   <%= link_to (cl_image_tag other_user.photo.key), user_path(other_user), class: "dashboard-profile-link"%>
                 <% else %>
-                  <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                  <%= link_to cl_image_tag("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(interview.user), class: "dashboard-profile-link" %>
                 <% end %>
               </td>
               <td class="text-center align-middle"  style="border-top: 3px solid #f1ece1"><div class="d-block badge badge-light py-2 px-3"><%= interview.date.strftime("%a %e.%m.%y") %> | <%= interview.start_time.strftime("%H:%M") %> - <%= interview.end_time.strftime("%H:%M") %></div></td>
@@ -83,7 +83,7 @@
                 <% if interview.user.photo.attached? %>
                   <%= link_to (cl_image_tag interview.user.photo.key), user_path(interview.user), class: "dashboard-profile-link"%>
                 <% else %>
-                  <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                  <%= link_to cl_image_tag("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(interview.user), class: "dashboard-profile-link"%>
                 <% end %>
               </td>
               <% if interview.bookings.present? %>
@@ -92,7 +92,7 @@
                   <% if other_user.photo.attached? %>
                     <%= link_to (cl_image_tag other_user.photo.key), user_path(other_user), class: "dashboard-profile-link"%>
                   <% else %>
-                    <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                    <%= link_to cl_image_tag("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(interview.user), class: "dashboard-profile-link"%>
                   <% end %>
                 </td>
               <% else  %>
@@ -143,7 +143,7 @@
                 <% if interview.user.photo.attached? %>
                   <%= link_to (cl_image_tag interview.user.photo.key), user_path(interview.user), class: "dashboard-profile-link"%>
                 <% else %>
-                  <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                  <%= link_to cl_image_tag("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(interview.user), class: "dashboard-profile-link"%>
                 <% end %>
               </td>
               <% if interview.bookings.present? %>
@@ -152,7 +152,7 @@
                   <% if other_user.photo.attached? %>
                     <%= link_to (cl_image_tag other_user.photo.key), user_path(other_user), class: "dashboard-profile-link"%>
                   <% else %>
-                    <%= link_to image_tag ("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(@interview.user)%>
+                    <%= link_to cl_image_tag("https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg"), user_path(interview.user), class: "dashboard-profile-link"%>
                   <% end %>
                 </td>
               <% else  %>

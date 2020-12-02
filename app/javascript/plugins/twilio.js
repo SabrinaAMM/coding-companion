@@ -82,7 +82,7 @@ const setVideoVisible = (visible) => {
   const element = document.getElementById("remote-video")
   if (visible) {
     // show it
-    element.style.display = "flex"
+    element.style.display = "block"
   } else {
     // hide it
     element.style.display = "none"
@@ -108,7 +108,7 @@ const setUpTwilio = () => {
     connectToRoom(token)
   })
 
-  const $hangUpButton = document.querySelector(".round-hang-up")
+  const $hangUpButton = document.querySelector(".video-hang-up")
   $hangUpButton.addEventListener('click', (e) => {
     disconnectVideo();
   })
