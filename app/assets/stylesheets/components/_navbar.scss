@@ -6,3 +6,13 @@
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
+
+.navbar-home-lewagon {
+  justify-content: flex-end;
+  background: transparent;
+  z-index: 1000;
+}
+
+.navbar-home-lewagon .navbar-collapse {
+  flex-grow: 0;
+}

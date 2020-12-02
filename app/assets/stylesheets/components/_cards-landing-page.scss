@@ -1,16 +1,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  background-color: #f7f8f7;
-}
-
-.card-landing {
-  margin-bottom: 150px;
-  padding: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-color: white;
-  border-radius: 4px;
+  grid-gap: 8px;
 }
 
 // Smallest device

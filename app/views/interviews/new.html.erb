@@ -13,7 +13,6 @@
             <%= simple_form_for [@interview] do |f| %>
               <br>
               <div class="d-flex flex-row">
-
                 <div class="flex-item mr-2"><%= f.input :date, as: :string %></div>
                 <div class="flex-item mr-2"><%= f.input :start_time, as: :string %></div>
                 <br>
@@ -26,13 +25,14 @@
               <br>
               <%= f.input :interview_language, :collection => ['German', 'Spanish', 'French', 'English'] %>
               <br>
+               
               <div class="buttons-form d-flex justify-content-between">
                 <%= link_to "← Go back", :back, class: "btn btn-secondary" %>
                 <%= f.button :submit, "→ Submit", class: "btn btn-primary" %>
               </div>
-              <br>
-            <% end %>
           </div>
+          <br>
+          <% end %>
         </div>
       </div>
     </div>

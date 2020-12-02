@@ -11,7 +11,7 @@ class Interview < ApplicationRecord
   validates :experience, presence: true
   validates :interview_language, presence: true
   validates :start_time, :end_time, presence: true
-  # validates :end_time_after_start_time
+  validate :end_time_after_start_time
 
   scope :filter_by_date, -> (date) { where date: date }
   scope :filter_by_interview_language, -> (interview_language) { where interview_language: interview_language }
