@@ -31,37 +31,40 @@ bruce.photo.attach(io: File.open(Rails.root.join('app','assets','images','bruce.
 rob = User.create!(email: "rob@example.com", password: "123456", nickname: "robbs", bio: "I got 10 years of experience in Ruby and Ruby on rails, CSS, JS and Python. I can help you prepare for your job interview!")
 rob.photo.attach(io: File.open(Rails.root.join('app','assets','images','rob.jpeg')), filename: 'rob.jpeg', content_type: 'image/jpeg')
 
-mario = User.create!(email: "mario@example.com", password: "123456", nickname: "mast2000", bio: "I am a strategy consultant based in Munich. I just finished the Le Wagon bootcamp in Munich to learn coding and acquire the right skillset to launch my own products!")
+mario = User.create!(email: "mario@example.com", password: "123456", nickname: "mast2020", bio: "I am a strategy consultant based in Munich. I just finished the Le Wagon bootcamp in Munich to learn coding and acquire the right skillset to launch my own products!")
 mario.photo.attach(io: File.open(Rails.root.join('app','assets','images','mario.png')), filename: 'mario.png', content_type: 'image/png')
 
 nico = User.create!(email: "nico@example.com", password: "123456", nickname: "nicolaspck", bio: "I just finished school this year and decided to learn coding because I think that it will always be useful. Coding is now my passion and I am looking forward to prepare myself for my first
 job interview with like-minded companions on this plattform.")
-nico.photo.attach(io: File.open(Rails.root.join('app','assets','images','nico.jpg')), filename: 'nico.jpg', content_type: 'image/jepg')
+nico.photo.attach(io: File.open(Rails.root.join('app','assets','images','nico.jpg')), filename: 'nico.jpg', content_type: 'image/jpg')
 
 
 
 puts "generating Interviews"
 
 # Today
-interview1 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,11,29,20), end_time: Time.new(2020,11,29,22), focus: "Ruby", experience: "Intermediate", interview_language: "English", user: john)
-interview2 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,12,12,19), end_time: Time.new(2020,12,12,23), focus: "HTML/CSS", experience: "Beginner", interview_language: "German", user: mary)
-interview3 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,11,27,22), end_time: Time.new(2020,11,27,23), focus: "JS", experience: "Expert", interview_language: "English", user: zoe)
-interview4 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,12,13,19), end_time: Time.new(2020,12,13,21), focus: "HTML/CSS", experience: "Intermediate", interview_language: "Spanish", user: peter)
-interview5 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,12,13,21), end_time: Time.new(2020,12,13,22), focus: "Ruby", experience: "Beginner", interview_language: "German", user: nico)
+interview1 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,12,12,19), end_time: Time.new(2020,12,12,21), focus: "HTML/CSS", experience: "Beginner", interview_language: "German", user: mary)
+interview2 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,12,13,19), end_time: Time.new(2020,12,13,21), focus: "HTML/CSS", experience: "Intermediate", interview_language: "Spanish", user: peter)
+interview3 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,11,29,20), end_time: Time.new(2020,11,29,22), focus: "Ruby", experience: "Intermediate", interview_language: "English", user: john)
+interview4 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,12,13,21), end_time: Time.new(2020,12,13,23), focus: "Ruby", experience: "Beginner", interview_language: "German", user: nico)
+interview5 = Interview.create!(date: Date.parse("02.12.2020"), start_time: Time.new(2020,11,27,21), end_time: Time.new(2020,11,27,23), focus: "JavaScript", experience: "Expert", interview_language: "English", user: zoe)
 # Tomorrow
-interview6 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,12,20), end_time: Time.new(2020,12,12,22), focus: "Ruby", experience: "Beginner", interview_language: "English", user: lisa)
-interview7 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,14,19), end_time: Time.new(2020,12,14,23), focus: "Ruby", experience: "Expert", interview_language: "French", user: bruce)
-interview8 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,11,28,22), end_time: Time.new(2020,11,28,23), focus: "JS", experience: "Expert", interview_language: "English", user: john)
-interview9 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,11,28,19), end_time: Time.new(2020,11,28,21), focus: "Ruby", experience: "Intermediate", interview_language: "English", user: mary)
-interview10 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,12,21), end_time: Time.new(2020,12,12,22), focus: "Ruby", experience: "Expert", interview_language: "German", user: zoe)
-interview11 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,10,15), end_time: Time.new(2020,12,10,20), focus: "HTML/CSS", experience: "Beginner", interview_language: "English", user: peter)
-interview12 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,12,14), end_time: Time.new(2020,12,12,16), focus: "Ruby", experience: "Intermediate", interview_language: "English", user: lisa)
+interview6 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,12,14), end_time: Time.new(2020,12,12,16), focus: "JavaScript", experience: "Intermediate", interview_language: "English", user: lisa)
+interview7 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,10,15), end_time: Time.new(2020,12,10,17), focus: "Ruby", experience: "Beginner", interview_language: "Spanish", user: peter)
+interview8 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,11,28,19), end_time: Time.new(2020,11,28,21), focus: "HTML/CSS", experience: "Beginner", interview_language: "English", user: mary)
+interview9 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,14,19), end_time: Time.new(2020,12,14,21), focus: "Ruby", experience: "Expert", interview_language: "French", user: bruce)
+interview10 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,12,20), end_time: Time.new(2020,12,12,22), focus: "Ruby", experience: "Beginner", interview_language: "English", user: lisa)
+interview11 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,12,21), end_time: Time.new(2020,12,12,23), focus: "Ruby", experience: "Expert", interview_language: "German", user: zoe)
+interview12 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,11,28,21), end_time: Time.new(2020,11,28,23), focus: "JavaScript", experience: "Expert", interview_language: "English", user: john)
 # In the future
-interview13 = Interview.create!(date: Date.parse("04.12.2020"), start_time: Time.new(2020,12,16,22), end_time: Time.new(2020,12,16,23), focus: "JS", experience: "Expert", interview_language: "Spanish", user: bruce)
-interview14 = Interview.create!(date: Date.parse("08.12.2020"), start_time: Time.new(2020,12,16,19), end_time: Time.new(2020,12,16,21), focus: "JS", experience: "Expert", interview_language: "Spanish", user: bruce)
-interview15 = Interview.create!(date: Date.parse("12.12.2020"), start_time: Time.new(2020,12,16,21), end_time: Time.new(2020,12,16,22), focus: "HTML/CSS", experience: "Expert", interview_language: "Spanish", user: bruce)
-interview16 = Interview.create!(date: Date.parse("16.12.2020"), start_time: Time.new(2020,12,16,15), end_time: Time.new(2020,12,16,20), focus: "Ruby", experience: "Expert", interview_language: "Spanish", user: bruce)
-interview17 = Interview.create!(date: Date.parse("20.12.2020"), start_time: Time.new(2020,12,16,14), end_time: Time.new(2020,12,16,16), focus: "Ruby", experience: "Expert", interview_language: "Spanish", user: bruce)
+interview13 = Interview.create!(date: Date.parse("08.12.2020"), start_time: Time.new(2020,12,16,13), end_time: Time.new(2020,12,16,15), focus: "Ruby", experience: "Expert", interview_language: "French", user: bruce)
+interview14 = Interview.create!(date: Date.parse("09.12.2020"), start_time: Time.new(2020,12,16,14), end_time: Time.new(2020,12,16,16), focus: "Ruby", experience: "Beginner", interview_language: "Spanish", user: rob)
+interview15 = Interview.create!(date: Date.parse("11.12.2020"), start_time: Time.new(2020,12,16,15), end_time: Time.new(2020,12,16,17), focus: "Ruby", experience: "Expert", interview_language: "French", user: bruce)
+interview16 = Interview.create!(date: Date.parse("13.12.2020"), start_time: Time.new(2020,12,16,16), end_time: Time.new(2020,12,16,18), focus: "JavaScript", experience: "Intermediate", interview_language: "Spanish", user: lisa)
+interview17 = Interview.create!(date: Date.parse("14.12.2020"), start_time: Time.new(2020,12,16,17), end_time: Time.new(2020,12,16,19), focus: "HTML/CSS", experience: "Expert", interview_language: "French", user: bruce)
+interview18 = Interview.create!(date: Date.parse("14.12.2020"), start_time: Time.new(2020,12,16,19), end_time: Time.new(2020,12,16,21), focus: "JavaScript", experience: "Beginner", interview_language: "Spanish", user: rob)
+interview19 = Interview.create!(date: Date.parse("18.12.2020"), start_time: Time.new(2020,12,16,21), end_time: Time.new(2020,12,16,23), focus: "HTML/CSS", experience: "Expert", interview_language: "French", user: bruce)
+interview20 = Interview.create!(date: Date.parse("20.12.2020"), start_time: Time.new(2020,12,16,21), end_time: Time.new(2020,12,16,23), focus: "JavaScript", experience: "Intermediate", interview_language: "Spanish", user: mary)
 
 
 puts "generating Bookings"
@@ -70,7 +73,5 @@ booking1 = Booking.create!(user: bruce, interview: interview1)
 booking2 = Booking.create!(user: lisa, interview: interview2)
 booking3 = Booking.create!(user: peter, interview: interview3)
 booking4 = Booking.create!(user: zoe, interview: interview4)
-booking5 = Booking.create!(user: nico, interview: interview6)
-booking6 = Booking.create!(user: mario, interview: interview7)
 
 puts "done"
