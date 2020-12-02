@@ -1,11 +1,33 @@
 <div class="container ml-0 mr-0 mw-100">
-
   <div class="row">
     <div class="col-6 p-0" style="height: calc((100vh - 56px)/2);">
       <div class="d-flex align-items-center justify-content-center">
-        <h2>Interview Case <br> (Instructions)</h2>
+        <div class = "container m-3 ">
+          <h2> Interview Question</h2>
+          <div class = "interview_card my-4">
+            <div class="question"> 
+              <h5> Write a function that sorts the keys in a hash by the length of the key as a string.  </h5>
+              For instance, the hash:
+              <p></p>
+              <pre><code>{ abc: 'hello', 'another_key' => 123, 4567 => 'third' }</code></pre>
+              should result in:
+              <p></p>
+              <pre><code>["abc", "4567", "another_key"]</code></pre>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#case1">Show Answer</button>
+            <div id="case1" class="collapse in my-4">
+              There are in fact multiple ways to accomplish this:
+              <p></p>
+              <pre><code>hsh.keys.map(&:to_s).sort_by(&:length)</code></pre>
+              or:
+              <p></p>
+              <pre><code>hsh.keys.collect(&:to_s).sort_by { |key| key.length }</code></pre>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    
 
     <div class="col-6 p-0" style="height: calc((100vh - 56px)/2);">
       <!-- Video chat -->
