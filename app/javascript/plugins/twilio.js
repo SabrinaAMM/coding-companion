@@ -108,7 +108,7 @@ const setUpTwilio = () => {
     connectToRoom(token)
   })
 
-  const $hangUpButton = document.querySelector(".round-hang-up")
+  const $hangUpButton = document.querySelector(".video-hang-up")
   $hangUpButton.addEventListener('click', (e) => {
     disconnectVideo();
   })
