@@ -38,8 +38,6 @@ nico = User.create!(email: "nico@example.com", password: "123456", nickname: "ni
 job interview with like-minded companions on this platform.")
 nico.photo.attach(io: File.open(Rails.root.join('app','assets','images','nico.jpeg')), filename: 'nico.jpeg', content_type: 'image/jpeg')
 
-
-
 puts "generating Interviews"
 
 # Today
@@ -66,11 +64,6 @@ interview18 = Interview.create!(date: Date.parse("14.12.2020"), start_time: Time
 interview19 = Interview.create!(date: Date.parse("18.12.2020"), start_time: Time.new(2020,12,16,21), end_time: Time.new(2020,12,16,23), focus: "HTML/CSS", experience: "Expert", interview_language: "French", user: bruce)
 interview20 = Interview.create!(date: Date.parse("20.12.2020"), start_time: Time.new(2020,12,16,21), end_time: Time.new(2020,12,16,23), focus: "Javascript", experience: "Intermediate", interview_language: "Spanish", user: mary)
 
-puts "generating Bookings"
-
-booking1 = Booking.create!(user: bruce, interview: interview1)
-booking2 = Booking.create!(user: lisa, interview: interview2)
-booking3 = Booking.create!(user: peter, interview: interview3)
-booking4 = Booking.create!(user: zoe, interview: interview4)
+# puts "generating Bookings"
 
 puts "done"
