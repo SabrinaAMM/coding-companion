@@ -10,6 +10,7 @@ class Interview < ApplicationRecord
   validates :user, presence: true
   validates :experience, presence: true
   validates :interview_language, presence: true
+  validates :date, presence: true
   validates :start_time, :end_time, presence: true
   validate :end_time_after_start_time
 
