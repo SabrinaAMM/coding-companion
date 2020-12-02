@@ -1,44 +1,46 @@
+<div class="container mt-5">
+  <div class="d-flex" style="width: 1000px; margin: 0 auto;">
 
-<div class="container mt-5" >
-  <div class="d-flex justify-content-between">
-    <div class="#">
+    <!-- Avatar and edit button -->
+    <div class="d-flex flex-column align-items-center mr-5">
       <div>
         <% if @user.photo.attached? %>
-          <%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill , class: "rounded-circle m-10"%>
+          <%= cl_image_tag @user.photo.key, height: 150, width: 150, crop: :fill , class: "rounded-circle"%>
         <% else %>
-          <%= image_tag "https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg",height: 200, width: 200, crop: :fill, class: "rounded-circle" %>
+          <%= image_tag "https://res.cloudinary.com/yowyowyow/image/upload/v1606822793/default_profil_pic_ugryyk.jpg",height: 150, width: 150, crop: :fill, class: "rounded-circle" %>
         <% end %>
       </div>
 
-
       <% if @user == current_user %>
-        <%= link_to "Edit Profil", edit_user_registration_path, class: "btn btn-primary m-10 p-3" %>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
 
+    <!-- Profile information -->
     <div>
-      <div class="card bg-white rounded shadow-sm p-3 mr-5">
-        <h3>Hi, I'm <%= @user.nickname  %></h3>
-        <p></p>
-        <p> Member since: May 2020 </p>
-        <p> Number of Interviews: 4 </p>
-        <p> Speaks: English and Spanish </p>
+      <div class="card bg-white rounded shadow-sm p-3 mb-3">
+        <h3 class="mb-3">Hi, I'm <%= @user.nickname  %></h3>
+        <p class="m-0"> <span style="font-weight: bold;">Member since:</span> May 2020 </p>
+        <p class="m-0"> <span style="font-weight: bold;">Number of Interviews:</span> 4 </p>
+        <p class="m-0"> <span style="font-weight: bold;">Speaks:</span> English and Spanish </p>
       </div>
 
-      <div class="card bg-white rounded shadow-sm p-3 my-3 mr-5">
-        <h3>Bio</h3>
-        <p><%= @user.bio %></p>
+      <div class="card bg-white rounded shadow-sm p-3 mb-3">
+        <h3 class="mb-3">Bio</h3>
+        <p class="m-0"><%= @user.bio %></p>
       </div>
 
-      <div class="card bg-white rounded shadow-sm p-3 my-3 mr-5">
-        <h3>Programming Language and Experience</h3>
+      <div class="card bg-white rounded shadow-sm p-3 mb-3">
+        <h3 class="mb-3">Programming languages and experience</h3>
         <div>
-          <h2 class="badge badge-danger mx-2 p-2 text-danger text-center" style="display:inline-block; width:45px; background-color: rgba(253, 16, 21, 0.3)">Ruby </h2> Beginner
+          <h2 class="badge badge-danger mx-2 p-2 text-danger text-center" style="display:inline-block; width:45px; background-color: rgba(253, 16, 21, 0.3)">Ruby </h2> Intermediate
         </div>
         <div>
-          <h2 class="badge badge-warning mx-2 p-2 text-warning text-center" style="display:inline-block; width:45px; background-color: rgba(230, 126, 34, 0.3)">CSS</h2> Intermediate </div>
+          <h2 class="badge badge-warning mx-2 p-2 text-warning text-center" style="display:inline-block; width:45px; background-color: rgba(230, 126, 34, 0.3)">JS</h2> Beginner
         </div>
       </div>
     </div>
+
   </div>
 </div>
+
