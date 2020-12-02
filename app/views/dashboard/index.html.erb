@@ -2,7 +2,7 @@
   <h1>DASHBOARD</h1>
 
   <div class="mt-5">
-    <h3> My upcoming Interviews</h3>
+    <h3> My upcoming interviews</h3>
     <% if @upcoming_interviews.empty? %>
        <p> You don't have any upcoming interviews yet </p>
     <% else %>
@@ -13,8 +13,8 @@
             <th scope="col">Creator</th>
             <th scope="col">Participant</th>
             <th scope="col">Date</th>
-            <th scope="col">Programming Languages</th>
-            <th scope="col">Experience</th>
+            <th scope="col">Programming Language</th>
+            <th scope="col">Difficulty</th>
             <th scope="col">Interview Language</th>
             <th scope="col">Status</th>
             <th scope="col"></th>
@@ -56,7 +56,7 @@
 
 
   <div class="mt-5">
-    <h3> My pending Interviews</h3>
+    <h3> My pending interviews</h3>
     <% if @pending_interviews.empty? %>
       <p> You don't have any pending interviews yet. </p>
     <% else %>
@@ -67,8 +67,8 @@
             <th scope="col">Creator</th>
             <th scope="col">Participant</th>
             <th scope="col">Date</th>
-            <th scope="col">Programming Languages</th>
-            <th scope="col">Experience</th>
+            <th scope="col">Programming Language</th>
+            <th scope="col">Difficulty</th>
             <th scope="col">Interview Language</th>
             <th scope="col">Status</th>
             <th scope="col"></th>
@@ -114,7 +114,7 @@
 
 
   <div class="mt-5">
-    <h3>My past Interviews</h3>
+    <h3>My past interviews</h3>
     <% if @past_interviews.empty? %>
       <p> You don't have any past interviews yet. </p>
     <% else %>
@@ -125,8 +125,8 @@
           <th scope="col">Creator</th>
           <th scope="col">Participant</th>
           <th scope="col">Date</th>
-          <th scope="col">Programming Languages</th>
-          <th scope="col">Experience</th>
+          <th scope="col">Programming Language</th>
+          <th scope="col">Difficulty</th>
           <th scope="col">Interview Language</th>
           <th scope="col">Status</th>
           <th scope="col"></th>
