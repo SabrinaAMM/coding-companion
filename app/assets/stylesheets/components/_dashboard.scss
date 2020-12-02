@@ -1,12 +1,29 @@
+.table th {
+
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.table thead th {
+
+  border-bottom: 2px solid #9ba4b4;
+}
+
+
+
+.table td {
+
+  border-top: 2px solid #9ba4b4;
+ 
+}
+
+
+
 .badge-success {
 
   background-color: rgba(30, 221, 136, 0.8);
 }
 
-.badge-primary {
-
-  background-color: rgba(20, 39, 78, 0.8);
-}
 
 .badge-warning {
 
