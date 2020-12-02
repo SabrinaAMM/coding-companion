@@ -13,3 +13,20 @@
     cursor: pointer;
     background: rgba(0,0,0,0.06);
 }
+
+.form-control[readonly] {
+
+    background-color: white;
+}
+
+.flatpickr-day.selected {
+
+    background:  rgba(20, 39, 78, 0.7);
+    border-color:  rgba(20, 39, 78, 0.7);
+}
+
+.flatpickr-day.selected:hover {
+
+    background:  rgba(20, 39, 78, 0.7);
+    border-color:  rgba(20, 39, 78, 0.7);
+}

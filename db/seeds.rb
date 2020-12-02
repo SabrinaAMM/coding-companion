@@ -66,7 +66,6 @@ interview18 = Interview.create!(date: Date.parse("14.12.2020"), start_time: Time
 interview19 = Interview.create!(date: Date.parse("18.12.2020"), start_time: Time.new(2020,12,16,21), end_time: Time.new(2020,12,16,23), focus: "HTML/CSS", experience: "Expert", interview_language: "French", user: bruce)
 interview20 = Interview.create!(date: Date.parse("20.12.2020"), start_time: Time.new(2020,12,16,21), end_time: Time.new(2020,12,16,23), focus: "JavaScript", experience: "Intermediate", interview_language: "Spanish", user: mary)
 
-
 puts "generating Bookings"
 
 booking1 = Booking.create!(user: bruce, interview: interview1)
