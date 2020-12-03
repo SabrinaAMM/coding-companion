@@ -1,57 +1,62 @@
 <div class="container ml-0 mr-0 mw-100">
   <div class="row">
-    <div class="col-6 p-0" style="height: calc((100vh - 56px)/2);">
-      <div class="d-flex align-items-center justify-content-center">
-        <div class = "container m-3 " style="overflow-y: auto">
-          <h2> Interview Question</h2>
-          <div class = "interview_card my-4 p-0">
-            <div class="question">
-              <h5> Write a function that sorts the keys in a hash by the length of the key as a string.  </h5>
-              For instance, the hash:
-              <p></p>
-              <pre><code>{ abc: 'hello', 'another_key' => 123, 4567 => 'third' }</code></pre>
-              should result in:
-              <p></p>
-              <pre><code>["abc", "4567", "another_key"]</code></pre>
-            </div>
-            <button type="button" class="btn btn-primary mx-1" data-toggle="collapse" data-target="#case1">Show Answer</button>
-            <div id="case1" class="collapse in my-4">
-              There are in fact multiple ways to accomplish this:
-              <p></p>
-              <pre><code>hsh.keys.map(&:to_s).sort_by(&:length)</code></pre>
-              or:
-              <p></p>
-              <pre><code>hsh.keys.collect(&:to_s).sort_by { |key| key.length }</code></pre>
-            </div>
-          </div>
+
+    <!-- Interview question -->
+    <div class="col-6 p-3" style="height: calc((100vh - 56px)/2);">
+      <div class="rounded h-100 p-4" style="background-color: #F4F4F4; overflow-y: auto">
+
+        <!-- Task -->
+        <h5>Task:</h5>
+        <p> Write a function that sorts the keys in a hash by the length of the key as a string.</p>
+        <hr>
+
+        <!-- Input/ Output -->
+        <h5>Example input/ output:</h5>
+        <p class="my-2"> For instance, the hash:</p>
+        <code>{ abc: 'hello', 'another_key' => 123, 4567 => 'third' }</code>
+        <p class="my-2"> should result in:</p>
+        <code>["abc", "4567", "another_key"]</code>
+        <hr>
+
+        <!-- Solution -->
+        <h5 class="mt-3">Solution:</h5>
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#case1">Show solution</button>
+        <div id="case1" class="collapse in my-4">
+          <p class="my-2">There are in fact multiple ways to accomplish this:</p>
+          <code>hsh.keys.map(&:to_s).sort_by(&:length)</code>
+          <p class="my-2">or:</p>
+          <code>hsh.keys.collect(&:to_s).sort_by { |key| key.length }</code>
         </div>
+
       </div>
     </div>
 
 
-    <div class="col-6 p-0" style="height: calc((100vh - 56px)/2);">
-      <!-- Video chat -->
+    <!-- Video chat -->
+    <div class="col-6 p-3" style="height: calc((100vh - 56px)/2);">
       <div id="twilio-token" data-twilio-token="<%= JSON.generate(@token) %>"></div>
-      <div id="remote-video" class="video-styling waiting h-100" style="background-color: black; margin: 0 auto; position: relative; top: 0;">
-        <h3 class="align-items-center">Waiting for <%= @other_user.nickname %> to join...</h3>
-        <div id="local-video" style="bottom: 50px; right: 0px; width: 150px; height: 50px; position: absolute;">
-          <div></div>
+      <div class="h-100 rounded" style="background-color: #F4F4F4;">
+        <div id="remote-video" class="video-styling waiting h-100" style="position: relative;">
+          <h4 class="align-items-center mt-0" style="color: black;">Waiting for <%= @other_user.nickname %> to join...</h4>
+          <div id="local-video" style="bottom: 50px; right: 0px; width: 150px; height: 50px; position: absolute;">
+            <div></div>
+          </div>
+          <div class="position-absolute" style="bottom: 15px; left: 15px; z-index: 1000;"><a href="#" class="video-call-button"><h3 class="m-0"><i class="fas fa-phone" style="color: green;"></i></h3></a></div>
+          <div class="position-absolute" style="bottom: 15px; left: 55px; z-index: 1000;"><a href="#" class="video-hang-up"><h3 class="m-0"><i class="fas fa-phone-slash" style="color: red;"></i></h3></a></div>
         </div>
       </div>
-        <div class="position-absolute" style="bottom: 8px; left: 12px; z-index: 1000;"><a href="#" class="video-call-button"><h3><i class="fas fa-phone" style="color: green;"></i></h3></a></div>
-        <div class="position-absolute" style="bottom: 8px; left: 60px; z-index: 1000;"><a href="#" class="video-hang-up"><h3><i class="fas fa-phone-slash" style="color: red;"></i></h3></a></div>
-
     </div>
 
 
     <!-- Editor -->
-    <div class="col-6 p-0" style="height: calc((100vh - 56px)/2); background-image: url(<%= cl_image_path 'https://res.cloudinary.com/yowyowyow/image/upload/v1606926859/console_screenshot_yyinse.png' %>); background-size: 100%;">
-
+    <div class="col-6 p-3" style="height: calc((100vh - 56px)/2)">
+      <div class="rounded" style="background-color: #F4F4F4; height: 100%">
+      </div>
     </div>
 
     <!-- Chat -->
-    <div class="col-6 p-0" style="height: calc((100vh - 56px)/2);">
-      <div class="d-flex flex-column justify-content-end bg-white p-3 h-100">
+    <div class="col-6 p-3" style="height: calc((100vh - 56px)/2);">
+      <div class="d-flex flex-column justify-content-end p-3 h-100 rounded" style="background-color: #F4F4F4;">
 
         <!-- Chat messages: -->
         <div id="messages" data-interview-id="<%= @interview.id %>" style="overflow-y: auto;">
@@ -62,8 +67,8 @@
 
         <!-- Chat input: -->
         <%= simple_form_for [ @interview, @message ], remote: true do |f| %>
-          <div class="d-flex chat-input mt-2 pr-3" style="height: 60px; width: calc((100vw - 30px)/2);">
-            <%= f.input_field :content, label: false, placeholder: "Add a message for #{@other_user.nickname}", class: "flex-grow-1 chat-message rounded p-2", id: "name" %>
+          <div class="d-flex chat-input mt-2" style="height: 60px;);">
+            <%= f.input_field :content, label: false, placeholder: "Send a message to #{@other_user.nickname}", class: "flex-grow-1 chat-message rounded p-2", id: "name" %>
             <button name="button" type="submit" class="chat-button mr-2" id="chat-submit">
               <i class="fas fa-paper-plane"></i>
             </button>
@@ -79,7 +84,9 @@
             </script>
           </div>
         <% end %>
+
       </div>
     </div>
+
   </div>
 </div>
