@@ -48,7 +48,7 @@ interview4 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.
 interview5 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,11,27,21), end_time: Time.new(2020,11,27,23), focus: "Ruby", experience: "Expert", interview_language: "German", user: mary)
 interview6 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,11,27,22), end_time: Time.new(2020,11,27,23), focus: "Javascript", experience: "Expert", interview_language: "English", user: john)
 interview7 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,11,27,21), end_time: Time.new(2020,11,27,23), focus: "HTML/CSS", experience: "Intermediate", interview_language: "Spanish", user: peter)
-interview8 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,13,22.5), end_time: Time.new(2020,12,13,23.5), focus: "Ruby", experience: "Beginner", interview_language: "German", user: nico)
+interview8 = Interview.create!(date: Date.parse("03.12.2020"), start_time: Time.new(2020,12,13,22), end_time: Time.new(2020,12,13,23), focus: "Ruby", experience: "Beginner", interview_language: "German", user: nico)
 # Tomorrow
 interview9 = Interview.create!(date: Date.parse("04.12.2020"), start_time: Time.new(2020,12,12,14), end_time: Time.new(2020,12,12,16), focus: "Javascript", experience: "Intermediate", interview_language: "English", user: lisa)
 interview10 = Interview.create!(date: Date.parse("04.12.2020"), start_time: Time.new(2020,12,10,15), end_time: Time.new(2020,12,10,17), focus: "Ruby", experience: "Beginner", interview_language: "Spanish", user: peter)
