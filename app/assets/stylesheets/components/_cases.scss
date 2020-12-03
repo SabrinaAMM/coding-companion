@@ -1,20 +1,20 @@
-.interview_card {
+// .interview_card {
 
-  overflow: scroll;
-  height: 250px;
-  padding: 10px;
-  background: white;
-
-
-}
+//   overflow: scroll;
+//   height: 250px;
+//   padding: 10px;
+//   background: white;
 
 
-code {
+// }
 
-  background:#fffffc;
-  border: 1px solid #EEE;
+
+.interview-task code {
+  border: 1px solid $light-blue;
   font-family: monospace;
-  padding: 2px 5px;
-  color:  black;
+  padding: 4px 7px;
+  border-radius: 4px;
+  background-color: $light-blue;
+  color: white;
 }
 
